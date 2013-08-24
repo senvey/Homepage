@@ -15,19 +15,20 @@
     <div id="life">
       <nav class="navbar navbar-inverse" role="navigation">
         <div class="collapse navbar-collapse navbar-ex1-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a id="home" href="#">Home</a></li>
-            <li><a id="book" href="#">Books</a></li>
-            <li><a id="movie" href="#">Movies</a></li>
-            <li><a id="travel" href="#">Traveling</a></li>
+          <ul id="life-tabs" class="nav navbar-nav">
+            <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
+            <li><a href="#books" data-toggle="tab">Books</a></li>
+            <li><a href="#movies" data-toggle="tab">Movies</a></li>
+            <li><a href="#traveling">Traveling</a></li>
           </ul>
         </div>
       </nav>
+      
+      <div class="tab-content">
 
-      <!-- >>>>>>>>>>>>> Home <<<<<<<<<<<<< -->
-      <div id="home-content" class="tab-content">
-        <div id="weibo" class="container">
-          <div class="panel panel-customized">
+        <!-- >>>>>>>>>>>>> Home <<<<<<<<<<<<< -->
+        <div id="home" class="tab-pane active">
+          <div id="weibo" class="panel panel-customized">
             <div class="panel-heading">
               <div class="media">
                 <div class="pull-left">
@@ -46,75 +47,76 @@
             <ul id="posts" class="list-group"></ul>
           </div>
         </div>
-      </div>
 
-      <!-- >>>>>>>>>>>>> Books <<<<<<<<<<<<< -->
-      <div id="book-content" class="tab-content">
-        <div id="book-detail" class="pull-left">
-          <div class="panel panel-customized">
-            <div class="panel-heading"></div>
-            <div class="panel-body">
-              <div class="media">
-                <a class="pull-left" href="#" target="_blank">
-                  <img class="media-object img-rounded" alt="poster">
-                </a>
-                <div class="media-body"></div>
-              </div>
-              <div id="comment" class="well"></div>
-            </div>
-          </div>
-        </div>
-        <div id="book-list" class="pull-right">
-          <div class="panel panel-customized">
-            <div class="panel-heading">Have Read</div>
-            <ul id="read" class="list-group"></ul>
-          </div>
-          <div class="panel panel-customized">
-            <div class="panel-heading">Wish to Read</div>
-            <ul id="wish" class="list-group"></ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- >>>>>>>>>>>>> Movies <<<<<<<<<<<<< -->
-      <div id="movie-content" class="tab-content">
-        <div class="panel">
-          <div class="panel-heading">US Top Box</div>
-          <div class="panel-body">
-            <div class=" pull-left">
-              <table class="table-hover">
-                <thead><tr></tr></thead>
-                <tbody></tbody>
-              </table>
-              <div id="movie-summary"></div>
-            </div>
-            <div id="movie-detail" class="well well-sm pull-right">
-              <div class="panel">
-                <div class="panel-heading">
-                  <div class="media">
-                    <a href="#" target="_blank">
-                      <img class="media-object img-rounded" alt="poster">
-                    </a>
-                  </div>
+        <!-- >>>>>>>>>>>>> Books <<<<<<<<<<<<< -->
+        <div id="books" class="tab-pane">
+          <div id="book-detail" class="pull-left">
+            <div class="panel panel-customized">
+              <div class="panel-heading"></div>
+              <div class="panel-body">
+                <div class="media">
+                  <a class="pull-left" href="#" target="_blank">
+                    <img class="media-object img-rounded" alt="poster">
+                  </a>
+                  <div class="media-body"></div>
                 </div>
-                <ul class="list-group"></ul>
+                <div id="comment" class="well"></div>
+              </div>
+            </div>
+          </div>
+          <div id="book-list" class="pull-right">
+            <div class="panel panel-customized">
+              <div class="panel-heading">Have Read</div>
+              <ul id="read" class="list-group"></ul>
+            </div>
+            <div class="panel panel-customized">
+              <div class="panel-heading">Wish to Read</div>
+              <ul id="wish" class="list-group"></ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- >>>>>>>>>>>>> Movies <<<<<<<<<<<<< -->
+        <div id="movies" class="tab-pane">
+          <div class="panel">
+            <div class="panel-heading">US Top Box</div>
+            <div class="panel-body">
+              <div class=" pull-left">
+                <table class="table-hover">
+                  <thead><tr></tr></thead>
+                  <tbody></tbody>
+                </table>
+                <div id="movie-summary"></div>
+              </div>
+              <div id="movie-detail" class="well well-sm pull-right">
+                <div class="panel">
+                  <div class="panel-heading">
+                    <div class="media">
+                      <a href="#" target="_blank">
+                        <img class="media-object img-rounded" alt="poster">
+                      </a>
+                    </div>
+                  </div>
+                  <ul class="list-group"></ul>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- >>>>>>>>>>>>> Traveling <<<<<<<<<<<<< -->
-      <div id="travel-content" class="tab-content">
-        <div class="panel panel-customized">
-          <div class="panel-heading">Before I die, I want to ...</div>
-          <ul id="travel-list" class="list-group">
-            <li class="list-group-item">Go to Arctic for camping <a href="http://e.weibo.com/2255154723/A5namDXId">[pics]</a></li>
-            <li class="list-group-item"><a href="http://en.wikipedia.org/wiki/Banff_National_Park">Banff National Park (CA)</a></li>
-          </ul>
+        <!-- >>>>>>>>>>>>> Traveling <<<<<<<<<<<<< -->
+        <div id="traveling" class="tab-pane">
+          <div class="panel panel-customized">
+            <div class="panel-heading">Before I die, I want to ...</div>
+            <ul id="travel-list" class="list-group">
+              <li class="list-group-item">Go to Arctic for camping <a href="http://e.weibo.com/2255154723/A5namDXId">[pics]</a></li>
+              <li class="list-group-item"><a href="http://en.wikipedia.org/wiki/Banff_National_Park">Banff National Park (CA)</a></li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
+
+    </div><!-- END OF TAB-CONTENT -->
 
     <!-- ======================== My work ======================== -->
     <div id="work">
@@ -129,6 +131,7 @@
       </nav>
       <div class="claim">My work it is!</div>
     </div>
+
     <div id="divider"></div>
   </div>
 

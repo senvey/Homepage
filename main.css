@@ -10,7 +10,6 @@ li {
 
 .tab-content {
   opacity: 1;
-  display: none;
   height: 528px;  /* nav bar: height - 52px, margin-bottom - 20px */
   padding-left: 20px;
   padding-right: 20px;
@@ -64,7 +63,7 @@ div#life .panel .list-group-item {
   background-color: #C2C2C2;
 }
 
-div#life div#weibo .panel .panel {
+div#life div#weibo .panel {
   margin: 5px;
   padding-top: 10px;
   padding-left: 10px;
@@ -80,40 +79,40 @@ div#life #book-detail .well {
   margin-bottom: 0px;
 }
 
-div#movie-content .pull-left {
+div#movies .pull-left {
   width: 70%;
 }
 
-div#movie-content table {
+div#movies .pull-right {
+  width: 28%;
+}
+
+div#movies table {
   width: 100%;
   margin-bottom: 10px;
 }
 
-div#movie-content th {
+div#movies th {
   padding: 5px;
 }
 
-div#movie-content td {
+div#movies td {
   padding: 5px;
 }
 
-div#movie-content .pull-right {
-  width: 28%;
-}
-
-div#movie-content div#movie-detail img {
+div#movies div#movie-detail img {
   width: 100%;
 }
 
-div#movie-content div#movie-detail .panel {
+div#movies div#movie-detail .panel {
   margin-bottom: 0;
 }
 
-div#movie-content div#movie-detail .panel-heading {
+div#movies div#movie-detail .panel-heading {
   background-color: #C2C2C2;
 }
 
-div#movie-content div#movie-detail .panel .list-group-item {
+div#movies div#movie-detail .panel .list-group-item {
   padding-top: 5px;
   padding-bottom: 5px;
 }

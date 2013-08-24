@@ -7,8 +7,7 @@ $("#divider").click(function() {
   var fading = 500;
   var dura = 3000;
 
-  if (life.style("width") == "0px") {
-    /* display life */
+  if (life.style("width") == "0px") {  /* display life */
 
     divider.style("float", "right");
 
@@ -24,8 +23,7 @@ $("#divider").click(function() {
 
       init_life();
     });
-  } else {
-    /* display work */
+  } else {  /* display work */
 
     divider.style("float", "left");
 
@@ -40,16 +38,6 @@ $("#divider").click(function() {
       $("#work").children().fadeIn(fading);
     });
   }
-});
-
-/* ==== nav bar selection === */
-$(".nav li").click(function() {
-  $(".nav li").removeClass("active");
-  $(".tab-content").css("display", "none");
-
-  $(this).addClass("active");
-  var my_id = "#" + $(this).find("a").attr("id");
-  $(my_id + "-content").css("display", "block");
 });
 
 
@@ -137,7 +125,7 @@ function load_movie_list() {
     }
 
     function populate_movie(movie) {
-      movie_detail = d3.select("div#movie-content div#movie-detail");
+      movie_detail = d3.select("div#movies div#movie-detail");
       movie_detail.select(".media img").attr("src", movie.image);
       movie_detail.select(".media a").attr("href", movie.alt);
 
@@ -152,7 +140,7 @@ function load_movie_list() {
         col = cols[i];
         return col.toUpperCase()[0]+col.slice(1)+": "+d;
       });
-      d3.select("div#movie-content div#movie-summary").text(movie.summary);
+      d3.select("div#movies div#movie-summary").text(movie.summary);
     }
 
     if (movie.id in movie_cache) {
@@ -196,12 +184,12 @@ function load_movie_list() {
       "rating": {"name": "Rating", "width": "10%"}
     };
 
-    d3.select("div#movie-content thead").selectAll("th")
+    d3.select("div#movies thead").selectAll("th")
     .data(d3.permute(theader, cols)).enter().append("th")
     .text(function(col) { return col.name; })
     .attr("width", function(col) { return col.width; });
 
-    movie_row = d3.select("div#movie-content tbody").selectAll("tr")
+    movie_row = d3.select("div#movies tbody").selectAll("tr")
     .data(movies).enter().append("tr")
     .style("cursor", "pointer")
     .on("click", function(movie) { display_movie(movie); });
@@ -287,11 +275,11 @@ function load_renren() {
   }
 
   function init_life() {
-    $("div#life .tab-content").css("display", "none");
+    $('#life-tabs a').click(function (e) {
+      e.preventDefault();
+      $(this).tab('show');
+    })
     $("div#work").children().css("display", "none");
-
-    var display_content_id = "#" + $("div#life .navbar .active a").attr("id");
-    $(display_content_id + "-content").css("display", "block");
   }
 
   function init() {
