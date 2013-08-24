@@ -51,16 +51,16 @@ function load_book_list() {
     $("div#book-detail .panel-heading").html(collection.book.title + "<br/>");
 
     d3.select("div#book-detail .panel-heading").selectAll()
-    .data(collection.tags)
-    .enter().append("span")
-    .classed("badge", true)
-    .text(function(d) {return d;});
+      .data(collection.tags)
+      .enter().append("span")
+      .classed("badge", true)
+      .text(function(d) {return d;});
 
     d3.select("div#book-detail .media a")
-    .attr("href", book_url+collection.book_id)
+      .attr("href", book_url+collection.book_id)
 
     d3.select("div#book-detail .media-object")
-    .attr("src", collection.book.images.large);
+      .attr("src", collection.book.images.large);
 
     $("div#book-detail .panel-body .media-body").text(collection.book.summary);
 
@@ -74,22 +74,22 @@ function load_book_list() {
 
   function gen_book_list(ul_selection, collections) {
     ul_selection.selectAll()
-    .data(collections)
-    .enter().append("li")
-    .classed("list-group-item", true)
-    .text(function(collection) {
-      return collection.book.title + " (" + collection.book.author + ")";
-    })
-    .style("cursor", "pointer")
-    .on("mouseover", function() {
-      this.classList.add("text-info");
-    })
-    .on("mouseout", function() {
-      this.classList.remove("text-info");
-    })
-    .on("click", function(collection) {
-      gen_book_detail(collection);
-    });
+      .data(collections)
+      .enter().append("li")
+      .classed("list-group-item", true)
+      .text(function(collection) {
+        return collection.book.title + " (" + collection.book.author + ")";
+      })
+      .style("cursor", "pointer")
+      .on("mouseover", function() {
+        this.classList.add("text-info");
+      })
+      .on("mouseout", function() {
+        this.classList.remove("text-info");
+      })
+      .on("click", function(collection) {
+        gen_book_detail(collection);
+      });
   }
 
   $.ajax({
@@ -131,15 +131,15 @@ function load_movie_list() {
 
       cols = ["title", "director", "casts"];
       movie_detail.select("ul").selectAll("li")
-      .data(cols).enter().append("li")
-      .classed("list-group-item", true)
-      .attr("id", function(d) { return d; });
+        .data(cols).enter().append("li")
+        .classed("list-group-item", true)
+        .attr("id", function(d) { return d; });
       movie_detail.select("ul").selectAll("li")
-      .data(d3.permute(movie, cols))
-      .text(function(d, i) {
-        col = cols[i];
-        return col.toUpperCase()[0]+col.slice(1)+": "+d;
-      });
+        .data(d3.permute(movie, cols))
+        .text(function(d, i) {
+          col = cols[i];
+          return col.toUpperCase()[0]+col.slice(1)+": "+d;
+        });
       d3.select("div#movies div#movie-summary").text(movie.summary);
     }
 
@@ -185,18 +185,18 @@ function load_movie_list() {
     };
 
     d3.select("div#movies thead").selectAll("th")
-    .data(d3.permute(theader, cols)).enter().append("th")
-    .text(function(col) { return col.name; })
-    .attr("width", function(col) { return col.width; });
+      .data(d3.permute(theader, cols)).enter().append("th")
+      .text(function(col) { return col.name; })
+      .attr("width", function(col) { return col.width; });
 
     movie_row = d3.select("div#movies tbody").selectAll("tr")
-    .data(movies).enter().append("tr")
-    .style("cursor", "pointer")
-    .on("click", function(movie) { display_movie(movie); });
+      .data(movies).enter().append("tr")
+      .style("cursor", "pointer")
+      .on("click", function(movie) { display_movie(movie); });
 
     movie_row.selectAll("td")
-    .data(function(movie) { return d3.permute(movie, cols); })
-    .enter().append("td").text(function(d) { return d; })
+      .data(function(movie) { return d3.permute(movie, cols); })
+      .enter().append("td").text(function(d) { return d; })
 
     display_movie(movies[0]);
   });
@@ -279,10 +279,11 @@ function init_life() {
     e.preventDefault();
     $(this).tab('show');
   })
-  $("div#work").children().css("display", "none");
 }
 
 function init() {
+  $("div#work").children().css("display", "none");
+  
   load_weibo();
   load_book_list();
   load_movie_list();
