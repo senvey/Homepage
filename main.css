@@ -1,137 +1,137 @@
 body {
-	background-image: url('images/bg-repeat-body.png');
+  background-image: url('images/bg-repeat-body.png');
 }
 
 li {
-	list-style-type: none;
+  list-style-type: none;
 }
 
 /* ======================= [General Classes] ======================= */
 
 .tab-content {
-	opacity: 1;
-	display: none;
-	height: 528px;  /* nav bar: height - 52px, margin-bottom - 20px */
-	padding-left: 20px;
-	padding-right: 20px;
-	overflow: auto;
-	font-size: 13px;
+  opacity: 1;
+  display: none;
+  height: 528px;  /* nav bar: height - 52px, margin-bottom - 20px */
+  padding-left: 20px;
+  padding-right: 20px;
+  overflow: auto;
+  font-size: 13px;
 }
 
 .panel-heading {
-    font-weight: bold;
-    text-shadow: 1px 1px #666;
-    font-size: 18px;
+  font-weight: bold;
+  text-shadow: 1px 1px #666;
+  font-size: 18px;
 }
 
 .label-space {
-	margin-right: 10px;
+  margin-right: 10px;
 }
 
 /* ======================== General Classes ======================== */
 
 div#container {
-	border: 10px solid black;
-	width: 1020px;
-	height: 620px;
-	margin: auto;
-	margin-top: 3%;
+  border: 10px solid black;
+  width: 1020px;
+  height: 620px;
+  margin: auto;
+  margin-top: 3%;
 }
 
 div#life {
-	background-image: url('images/bg-repeat-life.jpg');
-	color: #3D3D3D;
-	opacity: 0.8;
-	width: 960px;
-	height: 600px;
-	float: left;
+  background-image: url('images/bg-repeat-life.jpg');
+  color: #3D3D3D;
+  opacity: 0.8;
+  width: 960px;
+  height: 600px;
+  float: left;
 }
 
 div#life .panel-customized {
-	width: 430px;
+  width: 430px;
 }
 
 div#life .panel-heading {
-	color: #992725;
-	background-color: #A0C196;
+  color: #992725;
+  background-color: #A0C196;
 }
 
 div#life .panel-body {
-    background-color: #C2C2C2;
+  background-color: #C2C2C2;
 }
 
 div#life .panel .list-group-item {
-	background-color: #C2C2C2;
+  background-color: #C2C2C2;
 }
 
 div#life div#weibo .panel .panel {
-    margin: 5px;
-	padding-top: 10px;
-	padding-left: 10px;
-	padding-right: 10px;
+  margin: 5px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 div#life div#book-detail .media-object {
-	width: 150px;
+  width: 150px;
 }
 
 div#life #book-detail .well {
-	margin-top: 15px;    /* same as padding of panel-body */
-	margin-bottom: 0px;
+  margin-top: 15px;  /* same as padding of panel-body */
+  margin-bottom: 0px;
 }
 
 div#movie-content .pull-left {
-    width: 70%;
+  width: 70%;
 }
 
 div#movie-content table {
-    width: 100%;
-    margin-bottom: 10px;
+  width: 100%;
+  margin-bottom: 10px;
 }
 
 div#movie-content th {
-    padding: 5px;
+  padding: 5px;
 }
 
 div#movie-content td {
-    padding: 5px;
+  padding: 5px;
 }
 
 div#movie-content .pull-right {
-    width: 28%;
+  width: 28%;
 }
 
 div#movie-content div#movie-detail img {
-    width: 100%;
+  width: 100%;
 }
 
 div#movie-content div#movie-detail .panel {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 div#movie-content div#movie-detail .panel-heading {
-    background-color: #C2C2C2;
+  background-color: #C2C2C2;
 }
 
 div#movie-content div#movie-detail .panel .list-group-item {
-    padding-top: 5px;
-    padding-bottom: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 
 div#work {
-	background-image: url('images/bg-repeat-work.png');
-	opacity: 0.8;
-	width: 0px;
-	height: 600px;
-	float: right;
+  background-image: url('images/bg-repeat-work.png');
+  opacity: 0.8;
+  width: 0px;
+  height: 600px;
+  float: right;
 }
 
 div#divider {
-	background-image: url('images/bg-repeat-life-bar.png');
-	width: 40px;
-	height: 600px;
-	border: 1px solid grey;
-	float: right;
-	cursor: pointer;
+  background-image: url('images/bg-repeat-life-bar.png');
+  width: 40px;
+  height: 600px;
+  border: 1px solid grey;
+  float: right;
+  cursor: pointer;
 }
