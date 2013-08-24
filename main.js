@@ -262,31 +262,31 @@ function load_renren() {
   var profile_url = "https://api.renren.com/v2/profile/get";
 
   // xhr = $.ajax({
-    // 	"url": profile_url,
-    // 	"data": {"access_token": renren_token, "userId": uid},
-    // 	"dataType": "jsonp"
-    // });
+  // 	"url": profile_url,
+  // 	"data": {"access_token": renren_token, "userId": uid},
+  // 	"dataType": "jsonp"
+  // });
 
-    var ajax = new Ajax();
-    ajax.ondone = function(data) {
-      alert(data);
-    };
-    ajax.get(profile_url, {"access_token": renren_token, "userId": uid});
-  }
+  var ajax = new Ajax();
+  ajax.ondone = function(data) {
+    alert(data);
+  };
+  ajax.get(profile_url, {"access_token": renren_token, "userId": uid});
+}
 
-  function init_life() {
-    $('#life-tabs a').click(function (e) {
-      e.preventDefault();
-      $(this).tab('show');
-    })
-    $("div#work").children().css("display", "none");
-  }
+function init_life() {
+  $('#life-tabs a').click(function (e) {
+    e.preventDefault();
+    $(this).tab('show');
+  })
+  $("div#work").children().css("display", "none");
+}
 
-  function init() {
-    load_weibo();
-    load_book_list();
-    load_movie_list();
-    init_life();
-  }
+function init() {
+  load_weibo();
+  load_book_list();
+  load_movie_list();
+  init_life();
+}
 
-  init();
+init();
