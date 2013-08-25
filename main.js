@@ -281,6 +281,13 @@ function init_life() {
   })
 }
 
+function init_work() {
+  $('#work-tabs a').click(function (e) {
+    e.preventDefault();
+    $(this).tab('show');
+  })
+}
+
 function init() {
   $("div#work").children().css("display", "none");
   
