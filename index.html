@@ -134,7 +134,50 @@
 
         <!-- >>>>>>>>>>>>> Career <<<<<<<<<<<<< -->
         <div id="career" class="tab-pane fade in active">
-          Linked-in profile...
+          <div id="linked-in" class="panel panel-default">
+            <div class="panel-heading">
+              Linked-In Profile
+              <small class="pull-right">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#linkedin-details" href="#p-summary">Summary</a> | 
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#linkedin-details" href="#p-skills">Skills</a> | 
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#linkedin-details" href="#p-recommendations">Recommendations</a>
+              </small>
+            </div>
+            <div class="panel-body">
+              <div class="media">
+                <img class="media-object pull-left img-rounded" alt="potrait">
+                <div class="media-body">
+                  <h3 id="full-name" class="compact"></h3>
+                  <h5 id="headline" class="compact"></h5>
+                  <p id="location-industry" class="compact grey-text"></p>
+                </div>
+              </div>
+              <dl class="panel-collapse in dl-horizontal well">
+                <dt id="positions" class="grey-text">Positions</dt>
+                <dt id="education" class="grey-text">Education</dt>
+                <dt id="recommendations" class="grey-text">Recommendations</dt>
+                <dt id="connections" class="grey-text">Connections</dt>
+                <dt id="profile-link" class="grey-text">Profile</dt>
+              </dl>
+              <div id="linkedin-details" class="panel-group">
+                <div id="p-summary" class="panel-collapse collapse">
+                  <div class="panel panel-default">
+                    <div class="panel-body"><p class="lead">Summary</p></div>
+                  </div>
+                </div>
+                <div id="p-skills" class="panel-collapse collapse">
+                  <div class="panel panel-default">
+                    <div class="panel-body"><p class="lead">Skills</p></div>
+                  </div>
+                </div>
+                <div id="p-recommendations" class="panel-collapse collapse">
+                  <div class="panel panel-default">
+                    <div class="panel-body"><p class="lead">Recommendations</p></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- >>>>>>>>>>>>> Projects <<<<<<<<<<<<< -->
@@ -144,11 +187,12 @@
 
         <!-- >>>>>>>>>>>>> About <<<<<<<<<<<<< -->
         <div id="about" class="tab-pane fade">
+          <div class="well well-sm">
           <strong>Credits</strong>
           <ul>
             <li>Facebook API:
               While trying to get access_token, I always got the following response, although the redirect_uri I used for /dialog/oauth and /oauth/access_token are the same "http://shengwei.li"
-              <code>
+              <blockquote>
                 {
                    "error": {
                       "message": "Error validating verification code. Please make sure your redirect_uri is identical to the one you used in the OAuth dialog request",
@@ -160,17 +204,17 @@
                 Found this from the observation of redirected url from /dialog/oauth (which was http://shengwei.li/?code=...). Also found this thread later on stackoverflow:
                 http://stackoverflow.com/questions/12996864/redirect-uri-error-in-oauth-for-facebook-django-app
                 It is also mentioned a couple of times here: http://stackoverflow.com/questions/4386691/facebook-error-error-validating-verification-code (not the most voted answer -- as early as in 2011)
-              </code>
+              </blockquote>
             </li>
             <li>Linked-In API:
               Instead of use state for /uas/oauth2/accessToken, it makes the life expectancy of code very short. Making the second call manually would probably leave the code expired and get the following very vague response:
-              <code>
+              <blockquote>
                 {"error":"invalid_request","error_description":"missing required parameters, includes an invalid parameter value, parameter more then once. : Unable to retrieve access token : appId or redirect uri does not match authorization code or authorization code expired"}
-              </code>
+              </blockquote>
               BTW, the second request does not need to be POST, GET also works.
             </li>
           </ul>
-          
+          </div>
         </div>
 
       </div>

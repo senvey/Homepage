@@ -1,0 +1,229 @@
+{
+  "firstName": "Shengwei",
+  "formattedName": "Shengwei Li",
+  "headline": "Master's Student at UC Irvine",
+  "industry": "Computer Software",
+  "location": {
+    "country": {"code": "us"},
+    "name": "San Francisco Bay Area"
+  },
+  "numConnections": 212,
+  "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_V24ZqLo6d64u6DUyZHRIqbdeIQaSoDUy4m2FqQEzq5VgzWupnoHNs6ORLamtWosKRfVQR3NsQ8Kv",
+  "positions": {
+    "_total": 4,
+    "values": [
+      {
+        "company": {
+          "id": 4418,
+          "industry": "Higher Education",
+          "name": "UC Irvine",
+          "size": "10,001+ employees",
+          "type": "Educational Institution"
+        },
+        "endDate": {
+          "month": 12,
+          "year": 2012
+        },
+        "id": 328055964,
+        "isCurrent": false,
+        "startDate": {
+          "month": 9,
+          "year": 2011
+        },
+        "title": "Master's Student"
+      },
+      {
+        "company": {
+          "id": 31517,
+          "industry": "Internet",
+          "name": "Yelp.com",
+          "size": "501-1000 employees",
+          "type": "Public Company"
+        },
+        "endDate": {
+          "month": 9,
+          "year": 2012
+        },
+        "id": 295505838,
+        "isCurrent": false,
+        "startDate": {
+          "month": 6,
+          "year": 2012
+        },
+        "summary": "Worked on spam prevention under the supervision of team leader and a dedicated internship mentor",
+        "title": "Software Engineer Intern"
+      },
+      {
+        "company": {
+          "id": 165444,
+          "industry": "Computer Software",
+          "name": "Perficient",
+          "ticker": "PRFT",
+          "type": "Public Company"
+        },
+        "endDate": {
+          "month": 8,
+          "year": 2011
+        },
+        "id": 152423851,
+        "isCurrent": false,
+        "startDate": {
+          "month": 9,
+          "year": 2007
+        },
+        "summary": "- Serve as a senior, full-time technical design, implementation, and coaching resource on projects\n- Engage in day-to-day design and development processes, contribute to crucial technical decisions\n- Work with a dedicated Project Manager or act as a team lead to manage scope and delivery schedules\n- Serve as an individual contributor for key components of a systems solution\n- Work with Technical Architects to define system requirements and participate in application design\n- Coach junior engineers\n- Effectively track and communicate on a timely basis the status of deliverables and metrics at the sub-team or module level",
+        "title": "Senior Technical Consultant"
+      },
+      {
+        "company": {
+          "id": 10816,
+          "industry": "Information Technology and Services",
+          "name": "BoldTech Systems (acquired by Perficient Inc.)",
+          "type": "Privately Held"
+        },
+        "endDate": {
+          "month": 9,
+          "year": 2007
+        },
+        "id": 191005256,
+        "isCurrent": false,
+        "startDate": {
+          "month": 7,
+          "year": 2005
+        },
+        "summary": "- Serve as a full-time technical resource participating in the design and implementation of a project\n- Work with a dedicated Project Manager and technical team leadership complete design, development, configuration, documentation and testing tasks\n- With limited direction, serve as an individual contributor for key components of a solution\n- Communicate timely status of all individual deliverables and metrics",
+        "title": "Software Engineer"
+      }
+    ]
+  },
+  "publicProfileUrl": "http://www.linkedin.com/in/shengweili",
+  "specialties": "- Programming Languages: Java, C#, VB.NET, C/C++, HTML, XML/XSLT, JavaScript (jQuery), PHP, Python, T-SQL, PL/SQL\n- Application Environment: Windows, Linux, MS SQL Server, MySQL, Oracle 9i, BEA WebLogic, BEA AquaLogic, JBoss, Apache, Drupal\n- Knowledge Domains: J2EE, EJB, ASP.NET, PHP, BPM, ETL (SSIS), UML, CMMI",
+  "summary": "More than six years in IT industry as a technical consultant, and worked for five major projects with variant group sizes. Industrial domains mainly includes telecommunications, media, government and e-commerce.\n\nFamiliar with agile programming and delivery and practiced in day-to-day work; certified ScrumMaster. Actively involved in projects assessed for appraisal of CMMI 3 to CMMI 5 with agile and its re-appraisal.\n\nA versatile consultant focusing on clients' satisfaction and exhibiting dramatic flexibility; a fast leaner excelling at research for new knowledge domains and solving problems.",
+  "educations": {
+    "_total": 2,
+    "values": [
+      {
+        "activities": "Chinese Students and Scholars Association",
+        "degree": "Master's degree",
+        "endDate": {"year": 2012},
+        "fieldOfStudy": "Computer Science",
+        "id": 82730898,
+        "schoolName": "University of California, Irvine",
+        "startDate": {"year": 2011}
+      },
+      {
+        "activities": "",
+        "degree": "B.E.",
+        "endDate": {"year": 2005},
+        "fieldOfStudy": "Computer Science and Technology",
+        "id": 60798300,
+        "notes": "",
+        "schoolName": "Hangzhou Dianzi University",
+        "startDate": {"year": 2001}
+      }
+    ]
+  },
+  "lastModifiedTimestamp": 1369719156501,
+  "recommendationsReceived": {
+    "_total": 2,
+    "values": [
+      {
+        "id": 32468504,
+        "recommendationText": "I have worked with Shengwei for about 5 years. During the two projects we were working side by side, Shengwei always demonstrated his technical competence. He was using .NET, Java, PHP to build applications according to projects' needs one after another - his learning agility was quite impressive and Shengwei was self-motivated to learn new technologies and kept practicing. Besides, he is also a good teammate since he is willing to share knowledge and discuss with others, and offers help to others whenever necessary.",
+        "recommendationType": {"code": "colleague"},
+        "recommender": {
+          "firstName": "Philip",
+          "id": "DFa1WaopM_",
+          "lastName": "Wang"
+        }
+      },
+      {
+        "id": 30436582,
+        "recommendationText": "I have known and worked with Mr. Li from July 2005 through December 2008 during my tenure at BoldTech/Perficient (Hangzhou) China, Ltd.  I witnessed Mr. Li\u2019s personal and professional growth from the time he first started as an Associate Consultant and through several promotions. He has demonstrated broad based technical competence and the ability to quickly learn new technologies as well as becoming deep in specific ones that his different projects required. He can work both independently as well as interdependently in a team based environment. Mr. Li has a natural curiosity that makes him a continuous learner\u2014wanting to better himself professionally and personally.  He is achievement driven, focused and highly motivated to excel in all aspects of his personal and professional life. He surely would be a valuable addition to any team.",
+        "recommendationType": {"code": "colleague"},
+        "recommender": {
+          "firstName": "Ron",
+          "id": "4IA_2jH-Yu",
+          "lastName": "Cutadean"
+        }
+      }
+    ]
+  },
+  "skills": {
+    "_total": 18,
+    "values": [
+      {
+        "id": 14,
+        "skill": {"name": "JavaScript"}
+      },
+      {
+        "id": 15,
+        "skill": {"name": "PHP"}
+      },
+      {
+        "id": 17,
+        "skill": {"name": "Spring"}
+      },
+      {
+        "id": 18,
+        "skill": {"name": "ASP.NET"}
+      },
+      {
+        "id": 19,
+        "skill": {"name": "Drupal"}
+      },
+      {
+        "id": 24,
+        "skill": {"name": "Python"}
+      },
+      {
+        "id": 33,
+        "skill": {"name": "SSIS"}
+      },
+      {
+        "id": 84,
+        "skill": {"name": "jQuery"}
+      },
+      {
+        "id": 94,
+        "skill": {"name": "Java Enterprise Edition"}
+      },
+      {
+        "id": 102,
+        "skill": {"name": "Agile Methodologies"}
+      },
+      {
+        "id": 104,
+        "skill": {"name": "J2EE"}
+      },
+      {
+        "id": 105,
+        "skill": {"name": "HTML/XML"}
+      },
+      {
+        "id": 106,
+        "skill": {"name": "Django"}
+      },
+      {
+        "id": 107,
+        "skill": {"name": "Doxygen"}
+      },
+      {
+        "id": 108,
+        "skill": {"name": "Hadoop"}
+      },
+      {
+        "id": 110,
+        "skill": {"name": "MapReduce"}
+      },
+      {
+        "id": 111,
+        "skill": {"name": "Information Retrieval"}
+      },
+      {
+        "id": 112,
+        "skill": {"name": "Java"}
+      }
+    ]
+  }
+}

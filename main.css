@@ -26,6 +26,14 @@ li {
   margin-right: 10px;
 }
 
+.compact {
+  margin-top: 0px;
+}
+
+.grey-text {
+  color: grey;
+}
+
 /* ======================== General Classes ======================== */
 
 div#container {
@@ -91,11 +99,7 @@ div#movies table {
   margin-bottom: 10px;
 }
 
-div#movies th {
-  padding: 5px;
-}
-
-div#movies td {
+div#movies th, td {
   padding: 5px;
 }
 
@@ -124,6 +128,23 @@ div#work {
   height: 600px;
   float: right;
 }
+
+div#career div#linked-in {
+  width: 70%;
+  margin: auto;
+}
+
+div#career div#linked-in small a {
+  color: #000;
+  font-size: 12px;
+  text-shadow: 0px 0px;
+}
+
+div#career div#linked-in dt, dd {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
 
 div#divider {
   background-image: url('images/bg-repeat-life-bar.png');
