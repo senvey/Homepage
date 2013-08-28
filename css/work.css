@@ -1,0 +1,9 @@
+/* This is the style sheet for the WORK panel. */
+
+div#work {
+  background-image: url('../images/bg-repeat-work.png');
+  opacity: 0.8;
+  width: 0px;
+  height: 600px;
+  float: right;
+}

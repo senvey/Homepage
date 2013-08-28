@@ -6,7 +6,10 @@
   <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
   <!-- Optional theme -->
   <!-- <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css"> -->
-  <link rel="stylesheet" href="main.css">
+
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/life.css">
+  <link rel="stylesheet" href="css/work.css">
 </head>
 
 <body>
@@ -23,7 +26,7 @@
           </ul>
         </div>
       </nav>
-      
+
       <div class="tab-content">
 
         <!-- >>>>>>>>>>>>> Home <<<<<<<<<<<<< -->
@@ -150,11 +153,11 @@
               While trying to get access_token, I always got the following response, although the redirect_uri I used for /dialog/oauth and /oauth/access_token are the same "http://shengwei.li"
               <code>
                 {
-                   "error": {
-                      "message": "Error validating verification code. Please make sure your redirect_uri is identical to the one you used in the OAuth dialog request",
-                      "type": "OAuthException",
-                      "code": 100
-                   }
+                  "error": {
+                    "message": "Error validating verification code. Please make sure your redirect_uri is identical to the one you used in the OAuth dialog request",
+                    "type": "OAuthException",
+                    "code": 100
+                  }
                 }
                 The key issue is that /dialog/oauth will append a dash ("/") to the url, while /oauth/access_token will not. Hence "http://shengwei.li/" does not match with "http://shengwei.li".
                 Found this from the observation of redirected url from /dialog/oauth (which was http://shengwei.li/?code=...). Also found this thread later on stackoverflow:
@@ -170,7 +173,7 @@
               BTW, the second request does not need to be POST, GET also works.
             </li>
           </ul>
-          
+
         </div>
 
       </div>
@@ -183,6 +186,8 @@
   <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
   <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 
-  <script src="main.js"></script>
+  <script src="js/life.js"></script>
+  <script src="js/work.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

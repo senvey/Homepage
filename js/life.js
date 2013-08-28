@@ -1,44 +1,65 @@
 
-// TODO: change the transition direction of work panel
-$("#divider").click(function() {
-  var life = d3.select("#life");
-  var work = d3.select("#work");
-  var divider = d3.select("#divider");
-  var fading = 500;
-  var dura = 3000;
 
-  if (life.style("width") == "0px") {  /* display life */
+function init_life() {
+  $('#life-tabs a').click(function (e) {
+    e.preventDefault();
+    $(this).tab('show');
+  })
+}
 
-    divider.style("float", "right");
 
-    $("#work").children().fadeOut(fading);
-    work.transition().duration(dura).style("width", "0px");
-    life.transition().duration(dura).style("width", "960px");
+function load_weibo() {
+  var uid = "1717343864";
+  var token = "2.00aanNsBXGJOADd5c82bd50902WeM1";
+  var token_data = {"access_token": token, "uid": uid};
+  var profile_url = "https://api.weibo.com/2/users/show.json";
+  var weibo_timeline_url = "https://api.weibo.com/2/statuses/user_timeline.json";
 
-    $("#divider").fadeTo(dura / 2, 0.4, function() {
-      divider.style("background-image", "url('images/bg-repeat-life-bar.png')");
+  $.ajax({
+    "url": profile_url,
+    "data": token_data,
+    "dataType": "jsonp"
+  }).done(function(data) {
+    profile = data.data;
+    $("#weibo .panel-heading img").attr("src", profile.profile_image_url);
+    $("#weibo .panel-heading a").attr("href", "http://www.weibo.com/"+profile.profile_url).html(profile.screen_name);
+    $("#weibo .panel-heading #followings_count").html(profile.friends_count+" followings");
+    $("#weibo .panel-heading #followers_count").html(profile.followers_count+" followers");
+    $("#weibo .panel-heading #posts_count").html(profile.statuses_count+" posts");
+  });
+
+  /* post */
+  $.ajax({
+    "url": weibo_timeline_url,
+    "data": token_data,
+    "dataType": "jsonp"
+  }).done(function(data) {
+    // TODO: use d3 to rewrite this
+    posts = data.data.statuses.slice(0, 3);
+
+    var posts_panel = $("#weibo #posts");
+    posts.forEach(function(post, i) {
+      posts_panel.append("<li id='post-"+i+"' class='list-group-item'>" + post.text + "</li>");
+      if (post.retweeted_status) {
+        var retwt = post.retweeted_status;
+        var post_item = posts_panel.find("li#post-"+i)
+        post_item.append("<div class='panel'>" + retwt.text + "</div>");
+        panel_body = post_item.find("div.panel");
+
+        if (retwt.original_pic) {
+          pic_link = "<a href='"+retwt.original_pic+"' target='_blank'>[ View Image ]</a>";
+          panel_body.append("<span id='pic' class='label'>"+pic_link+"</span>");
+        }
+
+        // TODO: too urgly
+        cm_cnt = "<span class='label label-success label-space'>comments <span class='badge'>"+retwt.comments_count+"</span></span>";
+        rp_cnt = "<span class='label label-success label-space'>reposts <span class='badge'>"+retwt.reposts_count+"</span></span>";
+        lk_cnt = "<span class='label label-success label-space'>likes <span class='badge'>"+retwt.attitudes_count+"</span></span>";
+        panel_body.append("<br/><h5>"+cm_cnt+rp_cnt+lk_cnt+"</h5>");
+      }
     });
-    $("#divider").fadeTo(dura / 2, 1, function() {
-      $("#life").children().fadeIn(fading);
-
-      init_life();
-    });
-  } else {  /* display work */
-
-    divider.style("float", "left");
-
-    $("#life").children().fadeOut(fading);
-    life.transition().duration(dura).style("width", "0px");
-    work.transition().duration(dura).style("width", "960px");
-
-    $("#divider").fadeTo(dura / 2, 0.4, function() {
-      divider.style("background-image", "url('images/bg-repeat-work-bar.jpg')");
-    });
-    $("#divider").fadeTo(dura / 2, 1, function() {
-      $("#work").children().fadeIn(fading);
-    });
-  }
-});
+  });
+}
 
 
 function load_book_list() {
@@ -111,6 +132,7 @@ function load_book_list() {
     gen_book_detail(read_list[0]);
   });
 }
+
 
 function load_movie_list() {
   var douban_url = "http://api.douban.com";
@@ -203,76 +225,6 @@ function load_movie_list() {
 }
 
 
-function load_weibo() {
-  var uid = "1717343864";
-  var token = "2.00aanNsBXGJOADd5c82bd50902WeM1";
-  var token_data = {"access_token": token, "uid": uid};
-  var profile_url = "https://api.weibo.com/2/users/show.json";
-  var weibo_timeline_url = "https://api.weibo.com/2/statuses/user_timeline.json";
-
-  $.ajax({
-    "url": profile_url,
-    "data": token_data,
-    "dataType": "jsonp"
-  }).done(function(data) {
-    profile = data.data;
-    $("#weibo .panel-heading img").attr("src", profile.profile_image_url);
-    $("#weibo .panel-heading a").attr("href", "http://www.weibo.com/"+profile.profile_url).html(profile.screen_name);
-    $("#weibo .panel-heading #followings_count").html(profile.friends_count+" followings");
-    $("#weibo .panel-heading #followers_count").html(profile.followers_count+" followers");
-    $("#weibo .panel-heading #posts_count").html(profile.statuses_count+" posts");
-  });
-
-  /* post */
-  $.ajax({
-    "url": weibo_timeline_url,
-    "data": token_data,
-    "dataType": "jsonp"
-  }).done(function(data) {
-    // TODO: use d3 to rewrite this
-    posts = data.data.statuses.slice(0, 3);
-
-    var posts_panel = $("#weibo #posts");
-    posts.forEach(function(post, i) {
-      posts_panel.append("<li id='post-"+i+"' class='list-group-item'>" + post.text + "</li>");
-      if (post.retweeted_status) {
-        var retwt = post.retweeted_status;
-        var post_item = posts_panel.find("li#post-"+i)
-        post_item.append("<div class='panel'>" + retwt.text + "</div>");
-        panel_body = post_item.find("div.panel");
-
-        if (retwt.original_pic) {
-          pic_link = "<a href='"+retwt.original_pic+"' target='_blank'>[ View Image ]</a>";
-          panel_body.append("<span id='pic' class='label'>"+pic_link+"</span>");
-        }
-
-        // TODO: too urgly
-        cm_cnt = "<span class='label label-success label-space'>comments <span class='badge'>"+retwt.comments_count+"</span></span>";
-        rp_cnt = "<span class='label label-success label-space'>reposts <span class='badge'>"+retwt.reposts_count+"</span></span>";
-        lk_cnt = "<span class='label label-success label-space'>likes <span class='badge'>"+retwt.attitudes_count+"</span></span>";
-        panel_body.append("<br/><h5>"+cm_cnt+rp_cnt+lk_cnt+"</h5>");
-      }
-    });
-  });
-}
-
-function load_linkedin() {
-	// token with full_profile and network access
-	var token = "AQXJsMV254lDeXNlmbbitcLtN-JRZbKK2g0fUp4qzJd53F6TVw21mckRTdHM-bMZVH5Lrutr7nnDbA6zDji1lHl70FK-GbjZy52xmCpK8ZiTL_kiQ0kD7Qx2pY0GR7-HUJd7d1OQa_KoWDoFmx_0ayzCcxbZryZHZxUuVKqasVdXQoz0ugA";
-	var profile_url = "https://api.linkedin.com/v1/people/~";
-	var basic_profile_fields = ["picture-url", "formatted-name", "headline", "location", "industry", "positions", "num-connections", "summary", "specialties", "public-profile-url"];
-	var full_profile_fields = ["skills", "educations", "last-modified-timestamp", "recommendations-received"];
-	var profile_filter = ":("+basic_profile_fields+","+full_profile_fields+")";
-	var url = profile_url+profile_filter+"?format=json&oauth2_access_token="+token;
-	
-	$.ajax({
-		url: "proxy.php?url="+encodeURIComponent(url),
-		dataType: "json",
-	}).done(function(data) {
-		console.log(data.formattedName);
-	})
-}
-
 function load_renren() {
   var renren_token = "240086|6.6ec70dc2deb5058696be9ce7fd21a57f.2592000.1379379600-282173283";
   var uid = "282173283";
@@ -290,30 +242,3 @@ function load_renren() {
   };
   ajax.get(profile_url, {"access_token": renren_token, "userId": uid});
 }
-
-function init_life() {
-  $('#life-tabs a').click(function (e) {
-    e.preventDefault();
-    $(this).tab('show');
-  })
-}
-
-function init_work() {
-  $('#work-tabs a').click(function (e) {
-    e.preventDefault();
-    $(this).tab('show');
-  })
-}
-
-function init() {
-  $("div#work").children().css("display", "none");
-  
-  load_weibo();
-  load_book_list();
-  load_movie_list();
-  init_life();
-
-	load_linkedin();
-}
-
-init();
