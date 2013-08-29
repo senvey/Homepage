@@ -20,8 +20,6 @@ $("#divider").click(function() {
     });
     $("#divider").fadeTo(dura / 2, 1, function() {
       $("#life").children().fadeIn(fading);
-
-      init_life();
     });
   } else {  /* display work */
 
@@ -46,7 +44,6 @@ function init() {
   load_weibo();
   load_book_list();
   load_movie_list();
-  init_life();
 
   load_linkedin();
 }
