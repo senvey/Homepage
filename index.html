@@ -6,7 +6,10 @@
   <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
   <!-- Optional theme -->
   <!-- <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css"> -->
-  <link rel="stylesheet" href="main.css">
+
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/life.css">
+  <link rel="stylesheet" href="css/work.css">
 </head>
 
 <body>
@@ -23,7 +26,7 @@
           </ul>
         </div>
       </nav>
-      
+
       <div class="tab-content">
 
         <!-- >>>>>>>>>>>>> Home <<<<<<<<<<<<< -->
@@ -188,32 +191,32 @@
         <!-- >>>>>>>>>>>>> About <<<<<<<<<<<<< -->
         <div id="about" class="tab-pane fade">
           <div class="well well-sm">
-          <strong>Credits</strong>
-          <ul>
-            <li>Facebook API:
-              While trying to get access_token, I always got the following response, although the redirect_uri I used for /dialog/oauth and /oauth/access_token are the same "http://shengwei.li"
-              <blockquote>
-                {
-                   "error": {
+            <strong>Credits</strong>
+            <ul>
+              <li>Facebook API:
+                While trying to get access_token, I always got the following response, although the redirect_uri I used for /dialog/oauth and /oauth/access_token are the same "http://shengwei.li"
+                <blockquote>
+                  {
+                    "error": {
                       "message": "Error validating verification code. Please make sure your redirect_uri is identical to the one you used in the OAuth dialog request",
                       "type": "OAuthException",
                       "code": 100
-                   }
-                }
-                The key issue is that /dialog/oauth will append a dash ("/") to the url, while /oauth/access_token will not. Hence "http://shengwei.li/" does not match with "http://shengwei.li".
-                Found this from the observation of redirected url from /dialog/oauth (which was http://shengwei.li/?code=...). Also found this thread later on stackoverflow:
-                http://stackoverflow.com/questions/12996864/redirect-uri-error-in-oauth-for-facebook-django-app
-                It is also mentioned a couple of times here: http://stackoverflow.com/questions/4386691/facebook-error-error-validating-verification-code (not the most voted answer -- as early as in 2011)
-              </blockquote>
-            </li>
-            <li>Linked-In API:
-              Instead of use state for /uas/oauth2/accessToken, it makes the life expectancy of code very short. Making the second call manually would probably leave the code expired and get the following very vague response:
-              <blockquote>
-                {"error":"invalid_request","error_description":"missing required parameters, includes an invalid parameter value, parameter more then once. : Unable to retrieve access token : appId or redirect uri does not match authorization code or authorization code expired"}
-              </blockquote>
-              BTW, the second request does not need to be POST, GET also works.
-            </li>
-          </ul>
+                    }
+                  }
+                  The key issue is that /dialog/oauth will append a dash ("/") to the url, while /oauth/access_token will not. Hence "http://shengwei.li/" does not match with "http://shengwei.li".
+                  Found this from the observation of redirected url from /dialog/oauth (which was http://shengwei.li/?code=...). Also found this thread later on stackoverflow:
+                  http://stackoverflow.com/questions/12996864/redirect-uri-error-in-oauth-for-facebook-django-app
+                  It is also mentioned a couple of times here: http://stackoverflow.com/questions/4386691/facebook-error-error-validating-verification-code (not the most voted answer -- as early as in 2011)
+                </blockquote>
+              </li>
+              <li>Linked-In API:
+                Instead of use state for /uas/oauth2/accessToken, it makes the life expectancy of code very short. Making the second call manually would probably leave the code expired and get the following very vague response:
+                <blockquote>
+                  {"error":"invalid_request","error_description":"missing required parameters, includes an invalid parameter value, parameter more then once. : Unable to retrieve access token : appId or redirect uri does not match authorization code or authorization code expired"}
+                </blockquote>
+                BTW, the second request does not need to be POST, GET also works.
+              </li>
+            </ul>
           </div>
         </div>
 
@@ -227,6 +230,8 @@
   <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
   <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 
-  <script src="main.js"></script>
+  <script src="js/life.js"></script>
+  <script src="js/work.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

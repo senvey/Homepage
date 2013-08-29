@@ -1,0 +1,77 @@
+/* This is the style sheet for the LIFE panel. */
+
+div#life {
+  background-image: url('../images/bg-repeat-life.jpg');
+  color: #3D3D3D;
+  opacity: 0.8;
+  width: 960px;
+  height: 600px;
+  float: left;
+}
+
+div#life .panel-customized {
+  width: 430px;
+}
+
+div#life .panel-heading {
+  color: #992725;
+  background-color: #A0C196;
+}
+
+div#life .panel-body {
+  background-color: #C2C2C2;
+}
+
+div#life .panel .list-group-item {
+  background-color: #C2C2C2;
+}
+
+div#weibo .panel {
+  margin: 5px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+div#book-detail .media-object {
+  width: 150px;
+}
+
+div#book-detail .well {
+  margin-top: 15px;  /* same as padding of panel-body */
+  margin-bottom: 0px;
+}
+
+div#movies .pull-left {
+  width: 70%;
+}
+
+div#movies .pull-right {
+  width: 28%;
+}
+
+div#movies table {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+div#movies th, td {
+  padding: 5px;
+}
+
+div#movie-detail img {
+  width: 100%;
+}
+
+div#movie-detail .panel {
+  margin-bottom: 0;
+}
+
+div#movie-detail .panel-heading {
+  background-color: #C2C2C2;
+}
+
+div#movie-detail .panel .list-group-item {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
