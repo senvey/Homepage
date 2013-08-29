@@ -1,13 +1,4 @@
 
-
-function init_life() {
-  $('#life-tabs a').click(function (e) {
-    e.preventDefault();
-    $(this).tab('show');
-  })
-}
-
-
 function load_weibo() {
   var uid = "1717343864";
   var token = "2.00aanNsBXGJOADd5c82bd50902WeM1";

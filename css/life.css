@@ -1,7 +1,7 @@
 /* This is the style sheet for the LIFE panel. */
 
 div#life {
-  background-image: url('images/bg-repeat-life.jpg');
+  background-image: url('../images/bg-repeat-life.jpg');
   color: #3D3D3D;
   opacity: 0.8;
   width: 960px;
