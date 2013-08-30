@@ -3,8 +3,16 @@ body {
   background-image: url('../images/bg-repeat-body.png');
 }
 
-li {
-  list-style-type: none;
+.vertical-compact {
+  margin-top: 0px;
+}
+
+.grey-text {
+  color: grey;
+}
+
+.center-text {
+  text-align: center;
 }
 
 /* ======================= [General Classes] ======================= */

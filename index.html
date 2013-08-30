@@ -14,8 +14,10 @@
 
 <body>
   <div id="container">
+
     <!-- ======================== My Life ======================== -->
     <div id="life">
+
       <nav class="navbar navbar-inverse" role="navigation">
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul id="life-tabs" class="nav navbar-nav">
@@ -117,12 +119,14 @@
             </ul>
           </div>
         </div>
-      </div>
+      
+      </div><!-- END OF TAB-CONTENT -->
 
-    </div><!-- END OF TAB-CONTENT -->
+    </div>
 
     <!-- ======================== My work ======================== -->
     <div id="work">
+
       <nav class="navbar navbar-default" role="navigation">
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul id="work-tabs" class="nav navbar-nav">
@@ -150,9 +154,9 @@
               <div class="media">
                 <img class="media-object pull-left img-rounded" alt="potrait">
                 <div class="media-body">
-                  <h3 id="full-name" class="compact"></h3>
-                  <h5 id="headline" class="compact"></h5>
-                  <p id="location-industry" class="compact grey-text"></p>
+                  <h3 id="full-name" class="vertical-compact"></h3>
+                  <h5 id="headline" class="vertical-compact"></h5>
+                  <p id="location-industry" class="vertical-compact grey-text"></p>
                 </div>
               </div>
               <dl class="panel-collapse in dl-horizontal well">
@@ -185,7 +189,40 @@
 
         <!-- >>>>>>>>>>>>> Projects <<<<<<<<<<<<< -->
         <div id="projects" class="tab-pane fade">
-          My projects on Github
+          <div id="github" class="panel panel-default">
+            <div class="panel-heading">
+              Yes, I'm on GitHub!
+              <small class="pull-right"><a target="_blank"></a></small>
+            </div>
+            <div class="panel-body">
+              <div id="info" class="pull-left">
+                <h3 id="name" class="vertical-compact"></h3>
+                <h4 id="id" class="vertical-compact grey-text"></h4>
+                <hr />
+                <dl class="dl-horizontal">
+                  <dt id="location-dt">A</dt><dd id="location-dd"></dd>
+                  <dt id="time-joind-dt">B</dt><dd id="time-joined-dd"><span class="grey-text">Joined on </span></dd>
+                </dl>
+                <hr />
+                <div class="row">
+                  <div id="g-followers" class="col-md-3"><h3 class="center-text vertical-compact"></h3><small class="grey-text">followers</small></div>
+                  <div id="g-following" class="col-md-3"><h3 class="center-text vertical-compact"></h3><small class="grey-text">following</small></div>
+                  <div id="g-starred" class="col-md-3"><h3 class="center-text vertical-compact"></h3><small class="grey-text">starred</small></div>
+                  <div id="g-watched" class="col-md-3"><h3 class="center-text vertical-compact"></h3><small class="grey-text">watched</small></div>
+                </div>
+              </div>
+              <div id="repos" class="pull-left">
+                <div class="panel panel-default">
+                  <div class="panel-heading">Repositories</div>
+                  <ul class="list-group">
+                    <li class="list-group-item">
+                      Repository Name
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- >>>>>>>>>>>>> About <<<<<<<<<<<<< -->
@@ -220,7 +257,8 @@
           </div>
         </div>
 
-      </div>
+      </div><!-- END OF TAB-CONTENT -->
+
     </div>
 
     <div id="divider"></div>

@@ -49,3 +49,67 @@ function load_linkedin() {
     $("div#linked-in .panel-group div#p-recommendations p").after(recommendations.join("<br/>"));
   })
 }
+
+
+function load_github() {
+  var user_url = "https://api.github.com/users/senvey";
+  
+  $.ajax({
+    url: user_url,
+    dataType: "jsonp"
+  }).done(function(resp) {
+    var user = resp.data;
+    $("#github a").attr("href", user.html_url).text(user.html_url);
+    $("#github #name").text(user.name);
+    $("#github #id").text(user.login);
+    $("#github #location-dd").text(user.location);
+    date_created = new Date(user.created_at);
+    $("#github #time-joined-dd span").after(date_created.toLocaleDateString());
+    
+    populate_followers(user.followers_url);
+    populate_following(user.following_url.split('{')[0]);
+    populate_starred(user.starred_url.split('{')[0]);
+    populate_watched(user.subscriptions_url);
+  });
+  
+  function populate_followers(api_url) {
+    $.ajax({
+      url: api_url,
+      dataType: "jsonp"
+    }).done(function(resp) {
+      var followers = resp.data;
+      $("#github #g-followers h3").text(followers.length);
+    });
+  }
+
+  function populate_following(api_url) {
+    $.ajax({
+      url: api_url,
+      dataType: "jsonp"
+    }).done(function(resp) {
+      var following = resp.data;
+      $("#github #g-following h3").text(following.length);
+    });
+  }
+
+  function populate_starred(api_url) {
+    $.ajax({
+      url: api_url,
+      dataType: "jsonp"
+    }).done(function(resp) {
+      var starred = resp.data;
+      $("#github #g-starred h3").text(starred.length);
+    });
+  }
+
+  function populate_watched(api_url) {
+    $.ajax({
+      url: api_url,
+      dataType: "jsonp"
+    }).done(function(resp) {
+      var watched = resp.data;
+      $("#github #g-watched h3").text(watched.length);
+    });
+  }
+  
+}

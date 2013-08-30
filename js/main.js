@@ -39,13 +39,17 @@ $("#divider").click(function() {
 });
 
 function init() {
-  $("div#work").children().css("display", "none");
+  // $("div#work").children().css("display", "none");
+  $("div#work").css("width", "960px");
+  $("div#life").css("width", "0px");
+  $("div#life").children().css("display", "none");
 
   load_weibo();
   load_book_list();
   load_movie_list();
 
   load_linkedin();
+  load_github();
 }
 
 init();
