@@ -51,27 +51,76 @@ function load_linkedin() {
 }
 
 
+//TODO: use d3 data binding and represent using more fancy style
+//TODO: actually try to add callback function
 function load_github() {
-  var user_url = "https://api.github.com/users/senvey";
+  var user_url = "https://api.github.com/users/senvey",
+      token = "";
   
   $.ajax({
-    url: user_url,
+    url: user_url + token,
     dataType: "jsonp"
   }).done(function(resp) {
     var user = resp.data;
-    $("#github a").attr("href", user.html_url).text(user.html_url);
+    $("#github a#html_url").attr("href", user.html_url).text(user.html_url);
     $("#github #name").text(user.name);
     $("#github #id").text(user.login);
     $("#github #location-dd").text(user.location);
     date_created = new Date(user.created_at);
     $("#github #time-joined-dd span").after(date_created.toLocaleDateString());
     
-    populate_followers(user.followers_url);
-    populate_following(user.following_url.split('{')[0]);
-    populate_starred(user.starred_url.split('{')[0]);
-    populate_watched(user.subscriptions_url);
+    populate_followers(user.followers_url + token);
+    populate_following(user.following_url.split('{')[0] + token);
+    populate_starred(user.starred_url.split('{')[0] + token);
+    populate_watched(user.subscriptions_url + token);
+    
+    populate_repos(user.repos_url + token);
   });
-  
+
+  function populate_repos(api_url) {
+    $.ajax({
+      url: api_url,
+      dataType: "jsonp"
+    }).done(function(resp) {
+      var repos = resp.data;
+      repos.forEach(function(repo) {
+        //TODO(minor): peel off the style control
+        var repo_info = d3.select("div#github div#repos ul")
+          .append("li").classed("list-group-item", true).append("h4").style("margin", "0");
+        repo_info.append("a")
+          .attr("href", repo.html_url).attr("target", "_blank").text(repo.name);
+        repo_info.append("span")
+          .classed("badge pull-right", true).text(repo.watchers_count);
+        repo_info.append("br");
+        if (repo.description.length > 0) {
+          if (repo.description.length > 40) {
+            repo_desc = repo.description.substr(0, 40) + "...";
+          } else {
+            repo_desc = repo.description;
+          }
+          repo_info.append("small").text(repo_desc);
+          repo_info.append("br");
+        }
+
+        var labels = repo_info.append("small");
+        labels.append("span").classed("label label-primary", true)
+          .text(function() {
+            if (repo.fork) return "forked"; else return "original";
+          });
+        labels.append("span").html("&nbsp");
+        labels.append("span").classed("label label-primary", true)
+          .text("created: " + new Date(repo.created_at).toLocaleDateString());
+        labels.append("span").html("&nbsp");
+        labels.append("span").classed("label label-primary", true)
+          .text("updated: " + new Date(repo.updated_at).toLocaleDateString());
+        labels.append("span").html("&nbsp");
+        labels.append("span").classed("label label-primary", true)
+          .text(repo.language);
+      });
+    });
+  }
+
+
   function populate_followers(api_url) {
     $.ajax({
       url: api_url,
