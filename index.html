@@ -223,34 +223,60 @@
 
         <!-- >>>>>>>>>>>>> About <<<<<<<<<<<<< -->
         <div id="about" class="tab-pane fade">
-          <div class="well well-sm">
-            <strong>Credits</strong>
-            <ul>
-              <li>Facebook API:
-                While trying to get access_token, I always got the following response, although the redirect_uri I used for /dialog/oauth and /oauth/access_token are the same "http://shengwei.li"
-                <blockquote>
-                  {
-                    "error": {
-                      "message": "Error validating verification code. Please make sure your redirect_uri is identical to the one you used in the OAuth dialog request",
-                      "type": "OAuthException",
-                      "code": 100
-                    }
-                  }
-                  The key issue is that /dialog/oauth will append a dash ("/") to the url, while /oauth/access_token will not. Hence "http://shengwei.li/" does not match with "http://shengwei.li".
-                  Found this from the observation of redirected url from /dialog/oauth (which was http://shengwei.li/?code=...). Also found this thread later on stackoverflow:
-                  http://stackoverflow.com/questions/12996864/redirect-uri-error-in-oauth-for-facebook-django-app
-                  It is also mentioned a couple of times here: http://stackoverflow.com/questions/4386691/facebook-error-error-validating-verification-code (not the most voted answer -- as early as in 2011)
-                </blockquote>
-              </li>
-              <li>Linked-In API:
-                Instead of use state for /uas/oauth2/accessToken, it makes the life expectancy of code very short. Making the second call manually would probably leave the code expired and get the following very vague response:
-                <blockquote>
-                  {"error":"invalid_request","error_description":"missing required parameters, includes an invalid parameter value, parameter more then once. : Unable to retrieve access token : appId or redirect uri does not match authorization code or authorization code expired"}
-                </blockquote>
-                BTW, the second request does not need to be POST, GET also works.
-              </li>
-            </ul>
+          <div class="panel panel-default">
+            <div class="panel-heading">Credit</div>
+            <div class="panel-body">
+              <div class="row">
+                <a class="col-md-6" href="http://getbootstrap.com/">Bootstrap</a>
+                <div class="col-md-6">
+                  <a href="http://jquery.com/">jQuery</a> / 
+                  <a href="http://d3js.org/">Data-Driven Documents (d3)</a>
+                </div>
+              </div>
+              <div class="row">
+                <a class="col-md-6" href="http://open.weibo.com/">新浪微博 开发平台</a></li>
+                <a class="col-md-6" href="http://developers.douban.com/">豆瓣 开发者</a></li>
+              </div>
+              <div class="row">
+                <a class="col-md-6" href="https://developer.linkedin.com/">Linked-In Deverlopers</a></li>
+                <a class="col-md-6" href="http://developer.github.com/">GitHub Developer</a></li>
+              </div>
+            </div>
           </div>
+          
+          <div class="panel panel-default">
+            <div class="panel-heading">Notes</div>
+            <div class="panel-body">
+              <div class="well well-sm">
+                <ul>
+                  <li>Facebook API:
+                    While trying to get access_token, I always got the following response, although the redirect_uri I used for /dialog/oauth and /oauth/access_token are the same "http://shengwei.li"
+                    <blockquote>
+                      {
+                        "error": {
+                          "message": "Error validating verification code. Please make sure your redirect_uri is identical to the one you used in the OAuth dialog request",
+                          "type": "OAuthException",
+                          "code": 100
+                        }
+                      }
+                      The key issue is that /dialog/oauth will append a dash ("/") to the url, while /oauth/access_token will not. Hence "http://shengwei.li/" does not match with "http://shengwei.li".
+                      Found this from the observation of redirected url from /dialog/oauth (which was http://shengwei.li/?code=...). Also found this thread later on stackoverflow:
+                      http://stackoverflow.com/questions/12996864/redirect-uri-error-in-oauth-for-facebook-django-app
+                      It is also mentioned a couple of times here: http://stackoverflow.com/questions/4386691/facebook-error-error-validating-verification-code (not the most voted answer -- as early as in 2011)
+                    </blockquote>
+                  </li>
+                  <li>Linked-In API:
+                    Instead of use state for /uas/oauth2/accessToken, it makes the life expectancy of code very short. Making the second call manually would probably leave the code expired and get the following very vague response:
+                    <blockquote>
+                      {"error":"invalid_request","error_description":"missing required parameters, includes an invalid parameter value, parameter more then once. : Unable to retrieve access token : appId or redirect uri does not match authorization code or authorization code expired"}
+                    </blockquote>
+                    BTW, the second request does not need to be POST, GET also works.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
         </div>
 
       </div><!-- END OF TAB-CONTENT -->

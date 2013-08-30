@@ -19,7 +19,7 @@ div#linked-in dt, dd {
   padding-bottom: 2px;
 }
 
-div#linked-in, div#github {
+div#linked-in, div#github, div#about {
   width: 75%;
   margin: auto;
 }
@@ -40,4 +40,9 @@ div#github dt {
 
 div#github dd {
   margin-left: 30px;
+}
+
+div#about .col-md-6 {
+  text-align: center;
+  padding: 5px;
 }
