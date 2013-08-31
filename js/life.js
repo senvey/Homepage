@@ -1,17 +1,8 @@
 
 function load_weibo() {
-  var uid = "1717343864";
-  var token = "2.00aanNsBXGJOADd5c82bd50902WeM1";
-  var token_data = {"access_token": token, "uid": uid};
-  var profile_url = "https://api.weibo.com/2/users/show.json";
-  var weibo_timeline_url = "https://api.weibo.com/2/statuses/user_timeline.json";
-
-  $.ajax({
-    "url": profile_url,
-    "data": token_data,
-    "dataType": "jsonp"
-  }).done(function(data) {
-    profile = data.data;
+  /* profile */
+  $.get("proxy.php?content=weibo_profile").done(function(data) {
+    var profile = data;
     $("#weibo .panel-heading img").attr("src", profile.profile_image_url);
     $("#weibo .panel-heading a").attr("href", "http://www.weibo.com/"+profile.profile_url).html(profile.screen_name);
     $("#weibo .panel-heading #followings_count").html(profile.friends_count+" followings");
@@ -19,14 +10,10 @@ function load_weibo() {
     $("#weibo .panel-heading #posts_count").html(profile.statuses_count+" posts");
   });
 
-  /* post */
-  $.ajax({
-    "url": weibo_timeline_url,
-    "data": token_data,
-    "dataType": "jsonp"
-  }).done(function(data) {
+  /* posts */
+  $.get("proxy.php?content=weibo_posts").done(function(data) {
     // TODO: use d3 to rewrite this
-    posts = data.data.statuses.slice(0, 3);
+    var posts = data.statuses.slice(0, 3);
 
     var posts_panel = $("#weibo #posts");
     posts.forEach(function(post, i) {
@@ -217,19 +204,8 @@ function load_movie_list() {
 
 
 function load_renren() {
-  var renren_token = "240086|6.6ec70dc2deb5058696be9ce7fd21a57f.2592000.1379379600-282173283";
-  var uid = "282173283";
-  var profile_url = "https://api.renren.com/v2/profile/get";
 
-  // xhr = $.ajax({
-  // 	"url": profile_url,
-  // 	"data": {"access_token": renren_token, "userId": uid},
-  // 	"dataType": "jsonp"
-  // });
-
-  var ajax = new Ajax();
-  ajax.ondone = function(data) {
-    alert(data);
-  };
-  ajax.get(profile_url, {"access_token": renren_token, "userId": uid});
+  $.get("proxy.php?content=renren_profile").done(function(data) {
+    console.log(data);
+  });
 }

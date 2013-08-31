@@ -1,21 +1,7 @@
 
 function load_linkedin() {
-  // // token with full_profile and network access
-  // var token = "AQXJsMV254lDeXNlmbbitcLtN-JRZbKK2g0fUp4qzJd53F6TVw21mckRTdHM-bMZVH5Lrutr7nnDbA6zDji1lHl70FK-GbjZy52xmCpK8ZiTL_kiQ0kD7Qx2pY0GR7-HUJd7d1OQa_KoWDoFmx_0ayzCcxbZryZHZxUuVKqasVdXQoz0ugA";
-  // var profile_url = "https://api.linkedin.com/v1/people/~";
-  // var basic_profile_fields = ["picture-url", "formatted-name", "headline", "location", "industry", "positions", "num-connections", "summary", "specialties", "public-profile-url"];
-  // var full_profile_fields = ["skills", "educations", "last-modified-timestamp", "recommendations-received"];
-  // var profile_filter = ":("+basic_profile_fields+","+full_profile_fields+")";
-  // var url = profile_url+profile_filter+"?format=json&oauth2_access_token="+token;
-  //
-  // $.ajax({
-  //  url: "proxy.php?url="+encodeURIComponent(url),
-  //  dataType: "json",
-  // }).done(function(data) {
-  //  console.log(data.formattedName);
-  // })
 
-  $.get("linkedin.json", function(data) {
+  $.get("proxy.php?content=linkedin_profile").done(function(data) {
     $("div#linked-in .media img").attr("src", data.pictureUrl);
     $("div#linked-in .media-body #full-name").text(data.formattedName);
     $("div#linked-in .media-body #headline").text(data.headline);
@@ -47,21 +33,17 @@ function load_linkedin() {
     $("div#linked-in .panel-group div#p-summary p").after("<p>"+data.summary+"</p><p>"+data.specialties.replace("\n", "<br/>")+"</p>");
     $("div#linked-in .panel-group div#p-skills p").after("<p>"+skills.join(", ")+"</p>");
     $("div#linked-in .panel-group div#p-recommendations p").after(recommendations.join("<br/>"));
-  })
+  });
 }
 
 
 //TODO: use d3 data binding and represent using more fancy style
 //TODO: actually try to add callback function
 function load_github() {
-  var user_url = "https://api.github.com/users/senvey",
-      token = "";
+  var proxy_url = "proxy.php?type=github&url=",
+      user_url = "https://api.github.com/users/senvey";
   
-  $.ajax({
-    url: user_url + token,
-    dataType: "jsonp"
-  }).done(function(resp) {
-    var user = resp.data;
+  $.get(proxy_url + encodeURIComponent(user_url)).done(function(user) {
     $("#github a#html_url").attr("href", user.html_url).text(user.html_url);
     $("#github #name").text(user.name);
     $("#github #id").text(user.login);
@@ -69,20 +51,19 @@ function load_github() {
     date_created = new Date(user.created_at);
     $("#github #time-joined-dd span").after(date_created.toLocaleDateString());
     
-    populate_followers(user.followers_url + token);
-    populate_following(user.following_url.split('{')[0] + token);
-    populate_starred(user.starred_url.split('{')[0] + token);
-    populate_watched(user.subscriptions_url + token);
+    populate_followers(proxy_url + encodeURIComponent(user.followers_url));
+    populate_following(proxy_url + encodeURIComponent(user.following_url.split('{')[0]));
+    populate_starred(proxy_url + encodeURIComponent(user.starred_url.split('{')[0]));
+    populate_watched(proxy_url + encodeURIComponent(user.subscriptions_url));
     
-    populate_repos(user.repos_url + token);
+    populate_repos(proxy_url + encodeURIComponent(user.repos_url));
   });
 
   function populate_repos(api_url) {
     $.ajax({
       url: api_url,
-      dataType: "jsonp"
-    }).done(function(resp) {
-      var repos = resp.data;
+      dataType: "json"
+    }).done(function(repos) {
       repos.forEach(function(repo) {
         //TODO(minor): peel off the style control
         var repo_info = d3.select("div#github div#repos ul")
@@ -124,9 +105,8 @@ function load_github() {
   function populate_followers(api_url) {
     $.ajax({
       url: api_url,
-      dataType: "jsonp"
-    }).done(function(resp) {
-      var followers = resp.data;
+      dataType: "json"
+    }).done(function(followers) {
       $("#github #g-followers h3").text(followers.length);
     });
   }
@@ -134,9 +114,8 @@ function load_github() {
   function populate_following(api_url) {
     $.ajax({
       url: api_url,
-      dataType: "jsonp"
-    }).done(function(resp) {
-      var following = resp.data;
+      dataType: "json"
+    }).done(function(following) {
       $("#github #g-following h3").text(following.length);
     });
   }
@@ -144,9 +123,8 @@ function load_github() {
   function populate_starred(api_url) {
     $.ajax({
       url: api_url,
-      dataType: "jsonp"
-    }).done(function(resp) {
-      var starred = resp.data;
+      dataType: "json"
+    }).done(function(starred) {
       $("#github #g-starred h3").text(starred.length);
     });
   }
@@ -154,9 +132,8 @@ function load_github() {
   function populate_watched(api_url) {
     $.ajax({
       url: api_url,
-      dataType: "jsonp"
-    }).done(function(resp) {
-      var watched = resp.data;
+      dataType: "json"
+    }).done(function(watched) {
       $("#github #g-watched h3").text(watched.length);
     });
   }
