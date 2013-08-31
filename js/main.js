@@ -16,7 +16,7 @@ $("#divider").click(function() {
     life.transition().duration(dura).style("width", "960px");
 
     $("#divider").fadeTo(dura / 2, 0.4, function() {
-      divider.style("background-image", "url('../images/bg-repeat-life-bar.png')");
+      divider.style("background-image", "url('images/bg-repeat-life-bar.png')");
     });
     $("#divider").fadeTo(dura / 2, 1, function() {
       $("#life").children().fadeIn(fading);
@@ -30,7 +30,7 @@ $("#divider").click(function() {
     work.transition().duration(dura).style("width", "960px");
 
     $("#divider").fadeTo(dura / 2, 0.4, function() {
-      divider.style("background-image", "url('../images/bg-repeat-work-bar.jpg')");
+      divider.style("background-image", "url('images/bg-repeat-work-bar.jpg')");
     });
     $("#divider").fadeTo(dura / 2, 1, function() {
       $("#work").children().fadeIn(fading);
