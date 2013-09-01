@@ -9,26 +9,19 @@ div#life {
   float: left;
 }
 
-div#life .panel-customized {
+div#life .list-group-item a {
+  color: #5555DD;
+}
+
+div#home .panel,
+div#books .panel {
   width: 430px;
 }
 
-div#life .panel-heading {
-  color: #992725;
-  background-color: #A0C196;
-}
-
-div#life .panel-body {
-  background-color: #C2C2C2;
-}
-
-div#life .panel .list-group-item {
-  background-color: #C2C2C2;
-}
-
-div#weibo .panel {
-  margin: 5px;
+div#weibo .well {
+  margin-top: 5px;
   padding-top: 10px;
+  padding-bottom: 0px;
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -42,20 +35,20 @@ div#book-detail .well {
   margin-bottom: 0px;
 }
 
-div#movies .pull-left {
+div#movie-list {
   width: 70%;
 }
 
-div#movies .pull-right {
+div#movie-detail {
   width: 28%;
 }
 
-div#movies table {
+div#movie-list table {
   width: 100%;
   margin-bottom: 10px;
 }
 
-div#movies th, td {
+div#movie-list th, td {
   padding: 5px;
 }
 
@@ -63,15 +56,11 @@ div#movie-detail img {
   width: 100%;
 }
 
-div#movie-detail .panel {
+div#movie-detail .list-group {
   margin-bottom: 0;
 }
 
-div#movie-detail .panel-heading {
-  background-color: #C2C2C2;
-}
-
-div#movie-detail .panel .list-group-item {
+div#movie-detail .list-group-item {
   padding-top: 5px;
   padding-bottom: 5px;
 }

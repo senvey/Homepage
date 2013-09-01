@@ -13,28 +13,76 @@ function load_weibo() {
   /* posts */
   $.get("proxy.php?content=weibo_posts").done(function(data) {
     // TODO: use d3 to rewrite this
-    var posts = data.statuses.slice(0, 3);
+    var posts = data.statuses,
+        total_length = 0,
+        delimit = 5;
+
+    for (var i in posts) {
+      var post = posts[i];
+      total_length += post.text.length;
+      if (post.retweeted_status) {
+        total_length += post.retweeted_status.text.length;
+      }
+      if (total_length > 500) {
+        delimit = i;
+        break;
+      }
+    }
 
     var posts_panel = $("#weibo #posts");
-    posts.forEach(function(post, i) {
-      posts_panel.append("<li id='post-"+i+"' class='list-group-item'>" + post.text + "</li>");
+    posts.slice(0, delimit).forEach(function(post, i) {
+      var pic_span = "";
+      if (post.original_pic) {
+        pic_link = "<a href='" + post.original_pic + "' target='_blank'>[ View Image ]</a>";
+        pic_span = " <span class='text-primary'>" + pic_link + "</span>"
+      }
+      posts_panel.append("<li id='post-" + i + "' class='list-group-item'>" + post.text + pic_span + "</li>");
+      total_length += post.text.length;
+
       if (post.retweeted_status) {
         var retwt = post.retweeted_status;
         var post_item = posts_panel.find("li#post-"+i)
-        post_item.append("<div class='panel'>" + retwt.text + "</div>");
-        panel_body = post_item.find("div.panel");
-
+        post_item.append("<div class='well'>" + retwt.text + "</div>");
+        total_length += retwt.text.length;
+        
+        panel_body = post_item.find("div.well");
         if (retwt.original_pic) {
-          pic_link = "<a href='"+retwt.original_pic+"' target='_blank'>[ View Image ]</a>";
-          panel_body.append("<span id='pic' class='label'>"+pic_link+"</span>");
+          pic_link = "<a href='" + retwt.original_pic + "' target='_blank'>[ View Image ]</a>";
+          panel_body.append(" <span class='text-primary'>" + pic_link + "</span>");
         }
 
         // TODO: too urgly
         cm_cnt = "<span class='label label-success label-space'>comments <span class='badge'>"+retwt.comments_count+"</span></span>";
         rp_cnt = "<span class='label label-success label-space'>reposts <span class='badge'>"+retwt.reposts_count+"</span></span>";
         lk_cnt = "<span class='label label-success label-space'>likes <span class='badge'>"+retwt.attitudes_count+"</span></span>";
-        panel_body.append("<br/><h5>"+cm_cnt+rp_cnt+lk_cnt+"</h5>");
+        panel_body.append("<br/><h5>"+cm_cnt+" "+rp_cnt+" "+lk_cnt+"</h5>");
       }
+    });
+  });
+}
+
+
+function load_renren() {
+  $.get("proxy.php?content=renren_profile").done(function(data) {
+    var profile = data.response;
+
+    $("#renren-friends").append(profile.friendCount);
+    $("#renren-visitors").append(profile.visitorCount);
+  });  
+
+  $.get("proxy.php?content=renren_share").done(function(data) {
+    var shares = data.response,
+        share_panel = $("div#renren .panel-body ul");
+
+    shares.slice(0, 5).forEach(function(share) {
+      var share_content = "";
+      if (share.thumbUrl) {
+        var img = "<img class='media-object img-rounded' style='max-width: 150px;' src='" + share.thumUrl + "'>";
+        share_content += "<a class='pull-left' href='"+ share.url + "'>" + img + "</a>";
+      }
+      var title = "<a href='" + share.url + "' target='_blank'>" + share.title + "</a>";
+      share_content += "<div class='media-body'>" + title + share.summary + "</div>";
+      share_panel.append("<li class='list-group-item'><div class='media'>" + share_content + "</div></li>")
     });
   });
 }
@@ -199,13 +247,5 @@ function load_movie_list() {
       .enter().append("td").text(function(d) { return d; })
 
     display_movie(movies[0]);
-  });
-}
-
-
-function load_renren() {
-
-  $.get("proxy.php?content=renren_profile").done(function(data) {
-    console.log(data);
   });
 }

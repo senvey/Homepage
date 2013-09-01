@@ -42,6 +42,7 @@ function init() {
   $("div#work").children().css("display", "none");
 
   load_weibo();
+  load_renren();
   load_book_list();
   load_movie_list();
 

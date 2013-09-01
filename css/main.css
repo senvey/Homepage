@@ -31,8 +31,21 @@ body {
   font-size: 18px;
 }
 
-.label-space {
-  margin-right: 10px;
+.panel-heading .label {
+  font-size: 11px;
+}
+
+.panel-customized .panel-heading {
+  color: #992725;
+  background-color: #A0C196;
+}
+
+.panel-customized .panel-body {
+  background-color: #C2C2C2;
+}
+
+.panel-customized .list-group-item {
+  background-color: #C2C2C2;
 }
 
 /* ======================== General Classes ======================== */

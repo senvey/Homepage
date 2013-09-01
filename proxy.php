@@ -25,6 +25,7 @@ $weibo_posts_url = 'https://api.weibo.com/2/statuses/user_timeline.json?uid=%s&a
 $renren_uid = '282173283';
 $renren_token = '240086|6.6ec70dc2deb5058696be9ce7fd21a57f.2592000.1379379600-282173283';
 $renren_profile_url = 'https://api.renren.com/v2/profile/get?userId=%s&access_token=%s';
+$renren_share_url = 'https://api.renren.com/v2/share/list?ownerId=%s&access_token=%s';
 
 // token with full_profile and network access
 $linkedin_token = 'AQXJsMV254lDeXNlmbbitcLtN-JRZbKK2g0fUp4qzJd53F6TVw21mckRTdHM-bMZVH5Lrutr7nnDbA6zDji1lHl70FK-GbjZy52xmCpK8ZiTL_kiQ0kD7Qx2pY0GR7-HUJd7d1OQa_KoWDoFmx_0ayzCcxbZryZHZxUuVKqasVdXQoz0ugA';
@@ -44,6 +45,9 @@ switch ($content) {
     break;
   case 'renren_profile':
     echo file_get_contents(sprintf($renren_profile_url, $renren_uid, $renren_token));
+    break;
+  case 'renren_share':
+    echo file_get_contents(sprintf($renren_share_url, $renren_uid, $renren_token));
     break;
   case 'linkedin_profile':
     echo file_get_contents(sprintf($linkedin_profile_url, $linkedin_token));
