@@ -44,7 +44,7 @@ function load_weibo() {
         var post_item = posts_panel.find("li#post-"+i)
         post_item.append("<div class='well'>" + retwt.text + "</div>");
         total_length += retwt.text.length;
-        
+
         panel_body = post_item.find("div.well");
         if (retwt.original_pic) {
           pic_link = "<a href='" + retwt.original_pic + "' target='_blank'>[ View Image ]</a>";
@@ -68,7 +68,7 @@ function load_renren() {
 
     $("#renren-friends").append(profile.friendCount);
     $("#renren-visitors").append(profile.visitorCount);
-  });  
+  });
 
   $.get("proxy.php?content=renren_share").done(function(data) {
     var shares = data.response,
@@ -77,8 +77,8 @@ function load_renren() {
     shares.slice(0, 5).forEach(function(share) {
       var share_content = "";
       if (share.thumbUrl) {
-        var img = "<img class='media-object img-rounded' style='max-width: 150px;' src='" + share.thumUrl + "'>";
-        share_content += "<a class='pull-left' href='"+ share.url + "'>" + img + "</a>";
+        var img = "<img class='media-object img-rounded' style='max-width: 150px;' src='" + share.thumbUrl + "'>";
+        share_content += "<a class='pull-left' href='"+ share.url + "' target='_blank'>" + img + "</a>";
       }
       var title = "<a href='" + share.url + "' target='_blank'>" + share.title + "</a>";
       share_content += "<div class='media-body'>" + title + share.summary + "</div>";
@@ -97,11 +97,13 @@ function load_book_list() {
   function gen_book_detail(collection) {
     $("div#book-detail .panel-heading").html(collection.book.title + "<br/>");
 
-    d3.select("div#book-detail .panel-heading").selectAll()
+    if (collection.tags) {
+      d3.select("div#book-detail .panel-heading").selectAll()
       .data(collection.tags)
       .enter().append("span")
       .classed("badge", true)
       .text(function(d) {return d;});
+    }
 
     d3.select("div#book-detail .media a")
       .attr("href", book_url+collection.book_id)
