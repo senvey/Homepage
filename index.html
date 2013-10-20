@@ -10,294 +10,315 @@
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/life.css">
   <link rel="stylesheet" href="css/work.css">
+  <link rel="stylesheet" href="css/frame.css">
 </head>
 
 <body>
-  <div id="container">
-
-    <!-- ======================== My Life ======================== -->
-    <div id="life">
-
-      <nav class="navbar navbar-inverse" role="navigation">
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
-          <ul id="life-tabs" class="nav navbar-nav">
-            <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
-            <li><a href="#books" data-toggle="tab">Books</a></li>
-            <li><a href="#movies" data-toggle="tab">Movies</a></li>
-            <li><a href="#traveling" data-toggle="tab">Traveling</a></li>
-          </ul>
-        </div>
-      </nav>
-
-      <div class="tab-content">
-
-        <!-- >>>>>>>>>>>>> Home <<<<<<<<<<<<< -->
-        <div id="home" class="tab-pane fade in active">
-          <!-- ==== Weibo ==== -->
-          <div id="weibo" class="panel panel-customized pull-left">
-            <div class="panel-heading">
-              <div class="media">
-                <div class="pull-left">
-                  <img class="media-object img-rounded" alt="avatar">
-                </div>
-                <div class="media-body">
-                  <h4 class="media-heading"><a href="#" target="_blank">Weibo</a></h4>
-                  <h5>
-                    <span id="followings_count" class="label label-primary label-space"></span>
-                    <span id="followers_count" class="label label-primary label-space"></span>
-                    <span id="posts_count" class="label label-primary label-space"></span>
-                  </h5>
-                </div>
-              </div>
-            </div>
-            <ul id="posts" class="list-group"></ul>
-          </div>
-
-          <!-- ==== Renren ==== -->
-          <div id="renren" class="panel panel-customized pull-right">
-            <div class="panel-heading">
-              <div class="media">
-                <img class="media-object pull-left" src="images/renren.png" alt="Renren">
-                <div class="pull-right">
-                  <span id="renren-friends" class="label label-primary">Friends: </span><br />
-                  <span id="renren-visitors" class="label label-primary">Visitors: </span>
-                </div>
-              </div>
-            </div>
-            <div class="panel-body">
-              <div class="lead">Share</div>
-              <ul class="list-group"></ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- >>>>>>>>>>>>> Books <<<<<<<<<<<<< -->
-        <div id="books" class="tab-pane fade">
-          <div id="book-detail" class="pull-left">
-            <div class="panel panel-customized">
-              <div class="panel-heading"></div>
-              <div class="panel-body">
-                <div class="media">
-                  <a class="pull-left" href="#" target="_blank">
-                    <img class="media-object img-rounded" alt="poster">
-                  </a>
-                  <div class="media-body"></div>
-                </div>
-                <div id="comment" class="well"></div>
-              </div>
-            </div>
-          </div>
-          <div id="book-list" class="pull-right">
-            <div class="panel panel-customized">
-              <div class="panel-heading">Have Read</div>
-              <ul id="read" class="list-group"></ul>
-            </div>
-            <div class="panel panel-customized">
-              <div class="panel-heading">Wish to Read</div>
-              <ul id="wish" class="list-group"></ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- >>>>>>>>>>>>> Movies <<<<<<<<<<<<< -->
-        <div id="movies" class="tab-pane fade">
-          <div class="panel panel-customized">
-            <div class="panel-heading">US Top Box</div>
-            <div class="panel-body">
-              <div id="movie-list" class="pull-left">
-                <table class="table-hover">
-                  <thead><tr></tr></thead>
-                  <tbody></tbody>
-                </table>
-                <div id="movie-summary"></div>
-              </div>
-              <div id="movie-detail" class="well well-sm pull-right">
-                <div class="media">
-                  <a href="#" target="_blank">
-                    <img class="media-object img-rounded" alt="poster">
-                  </a>
-                </div>
-                <ul class="list-group"></ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- >>>>>>>>>>>>> Traveling <<<<<<<<<<<<< -->
-        <div id="traveling" class="tab-pane fade">
-          <div class="panel panel-customized">
-            <div class="panel-heading">Before I die, I want to ...</div>
-            <ul id="travel-list" class="list-group">
-              <li class="list-group-item">Go camping in Arctic Circle <a href="http://e.weibo.com/2255154723/A5namDXId">[pics]</a></li>
-              <li class="list-group-item"><a href="http://en.wikipedia.org/wiki/Banff_National_Park">Banff National Park (CA)</a></li>
-            </ul>
-          </div>
-        </div>
-      
-      </div><!-- END OF TAB-CONTENT -->
-
+  <div id="frame">
+    <div class="frame-border-height">
+      <div id="frame-top-left" class="frame-element frame-border-width"></div>
+      <div id="frame-top-dark" class="frame-element"></div>
+      <div id="frame-top-center" class="frame-element"></div>
+      <div id="frame-top-light" class="frame-element"></div>
+      <div id="frame-top-right" class="frame-element frame-border-width"></div>
     </div>
+    <div id="frame-middle">
+      <div id="frame-left" class="frame-element frame-border-width"></div>
+      <div id="container">
 
-    <!-- ======================== My work ======================== -->
-    <div id="work">
+        <!-- ======================== My Life ======================== -->
+        <div id="life">
 
-      <nav class="navbar navbar-default" role="navigation">
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
-          <ul id="work-tabs" class="nav navbar-nav">
-            <li class="active"><a href="#career" data-toggle="tab">Career</a></li>
-            <li><a href="#projects" data-toggle="tab">Projects</a></li>
-            <li><a href="#about" data-toggle="tab">About</a></li>
-          </ul>
-        </div>
-      </nav>
-
-      <div class="tab-content">
-
-        <!-- >>>>>>>>>>>>> Career <<<<<<<<<<<<< -->
-        <div id="career" class="tab-pane fade in active">
-          <div id="linked-in" class="panel panel-default">
-            <div class="panel-heading">
-              Linked-In Profile
-              <small class="pull-right">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#linkedin-details" href="#p-summary">Summary</a> | 
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#linkedin-details" href="#p-skills">Skills</a> | 
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#linkedin-details" href="#p-recommendations">Recommendations</a>
-              </small>
+          <nav class="navbar navbar-inverse" role="navigation">
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+              <ul id="life-tabs" class="nav navbar-nav">
+                <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
+                <li><a href="#books" data-toggle="tab">Books</a></li>
+                <li><a href="#movies" data-toggle="tab">Movies</a></li>
+                <li><a href="#traveling" data-toggle="tab">Traveling</a></li>
+              </ul>
             </div>
-            <div class="panel-body">
-              <div class="media">
-                <img class="media-object pull-left img-rounded" alt="potrait">
-                <div class="media-body">
-                  <h3 id="full-name" class="vertical-compact"></h3>
-                  <h5 id="headline" class="vertical-compact"></h5>
-                  <p id="location-industry" class="vertical-compact grey-text"></p>
-                </div>
-              </div>
-              <dl class="panel-collapse in dl-horizontal well">
-                <dt id="positions" class="grey-text">Positions</dt>
-                <dt id="education" class="grey-text">Education</dt>
-                <dt id="recommendations" class="grey-text">Recommendations</dt>
-                <dt id="connections" class="grey-text">Connections</dt>
-                <dt id="profile-link" class="grey-text">Profile</dt>
-              </dl>
-              <div id="linkedin-details" class="panel-group">
-                <div id="p-summary" class="panel-collapse collapse">
-                  <div class="panel panel-default">
-                    <div class="panel-body"><p class="lead">Summary</p></div>
+          </nav>
+
+          <div class="tab-content">
+
+            <!-- >>>>>>>>>>>>> Home <<<<<<<<<<<<< -->
+            <div id="home" class="tab-pane fade in active">
+              <!-- ==== Weibo ==== -->
+              <div id="weibo" class="panel panel-customized pull-left">
+                <div class="panel-heading">
+                  <div class="media">
+                    <div class="pull-left">
+                      <img class="media-object img-rounded" alt="avatar">
+                    </div>
+                    <div class="media-body">
+                      <h4 class="media-heading"><a href="#" target="_blank">Weibo</a></h4>
+                      <h5>
+                        <span id="followings_count" class="label label-primary label-space"></span>
+                        <span id="followers_count" class="label label-primary label-space"></span>
+                        <span id="posts_count" class="label label-primary label-space"></span>
+                      </h5>
+                    </div>
                   </div>
                 </div>
-                <div id="p-skills" class="panel-collapse collapse">
-                  <div class="panel panel-default">
-                    <div class="panel-body"><p class="lead">Skills</p></div>
-                  </div>
-                </div>
-                <div id="p-recommendations" class="panel-collapse collapse">
-                  <div class="panel panel-default">
-                    <div class="panel-body"><p class="lead">Recommendations</p></div>
-                  </div>
-                </div>
+                <ul id="posts" class="list-group"></ul>
               </div>
-            </div>
-          </div>
-        </div>
 
-        <!-- >>>>>>>>>>>>> Projects <<<<<<<<<<<<< -->
-        <div id="projects" class="tab-pane fade">
-          <div id="github" class="panel panel-default">
-            <div class="panel-heading">
-              Yes, I'm on GitHub!
-              <small class="pull-right"><a id="html_url" target="_blank"></a></small>
-            </div>
-            <div class="panel-body">
-              <div id="info" class="pull-left">
-                <h3 id="name" class="vertical-compact"></h3>
-                <h4 id="id" class="vertical-compact grey-text"></h4>
-                <hr />
-                <dl class="dl-horizontal">
-                  <dt id="location-dt"><span class="glyphicon glyphicon-list"></span></dt><dd id="location-dd"></dd>
-                  <dt id="time-joind-dt"><span class="glyphicon glyphicon-list"></span></dt><dd id="time-joined-dd"><span class="grey-text">Joined on </span></dd>
-                </dl>
-                <hr />
-                <div class="row">
-                  <div id="g-followers" class="col-md-3 center-text"><h3 class="vertical-compact"></h3><small class="grey-text">followers</small></div>
-                  <div id="g-following" class="col-md-3 center-text"><h3 class="vertical-compact"></h3><small class="grey-text">following</small></div>
-                  <div id="g-starred" class="col-md-3 center-text"><h3 class="vertical-compact"></h3><small class="grey-text">starred</small></div>
-                  <div id="g-watched" class="col-md-3 center-text"><h3 class="vertical-compact"></h3><small class="grey-text">watched</small></div>
+              <!-- ==== Renren ==== -->
+              <div id="renren" class="panel panel-customized pull-right">
+                <div class="panel-heading">
+                  <div class="media">
+                    <img class="media-object pull-left" src="images/renren.png" alt="Renren">
+                    <div class="pull-right">
+                      <span id="renren-friends" class="label label-primary">Friends: </span><br />
+                      <span id="renren-visitors" class="label label-primary">Visitors: </span>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div id="repos" class="pull-left">
-                <div class="panel panel-default">
-                  <div class="panel-heading">Repositories</div>
+                <div class="panel-body">
+                  <div class="lead">Share</div>
                   <ul class="list-group"></ul>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
 
-        <!-- >>>>>>>>>>>>> About <<<<<<<<<<<<< -->
-        <div id="about" class="tab-pane fade">
-          <div class="panel panel-default">
-            <div class="panel-heading">Credit</div>
-            <div class="panel-body">
-              <div class="row">
-                <a class="col-md-6" href="http://getbootstrap.com/">Bootstrap</a>
-                <div class="col-md-6">
-                  <a href="http://jquery.com/">jQuery</a> / 
-                  <a href="http://d3js.org/">Data-Driven Documents (d3)</a>
+            <!-- >>>>>>>>>>>>> Books <<<<<<<<<<<<< -->
+            <div id="books" class="tab-pane fade">
+              <div id="book-detail" class="pull-left">
+                <div class="panel panel-customized">
+                  <div class="panel-heading"></div>
+                  <div class="panel-body">
+                    <div class="media">
+                      <a class="pull-left" href="#" target="_blank">
+                        <img class="media-object img-rounded" alt="poster">
+                      </a>
+                      <div class="media-body"></div>
+                    </div>
+                    <div id="comment" class="well"></div>
+                  </div>
                 </div>
               </div>
-              <div class="row">
-                <a class="col-md-6" href="http://open.weibo.com/">新浪微博 开发平台</a></li>
-                <a class="col-md-6" href="http://developers.douban.com/">豆瓣 开发者</a></li>
-              </div>
-              <div class="row">
-                <a class="col-md-6" href="https://developer.linkedin.com/">Linked-In Deverlopers</a></li>
-                <a class="col-md-6" href="http://developer.github.com/">GitHub Developer</a></li>
+              <div id="book-list" class="pull-right">
+                <div class="panel panel-customized">
+                  <div class="panel-heading">Have Read</div>
+                  <ul id="read" class="list-group"></ul>
+                </div>
+                <div class="panel panel-customized">
+                  <div class="panel-heading">Wish to Read</div>
+                  <ul id="wish" class="list-group"></ul>
+                </div>
               </div>
             </div>
-          </div>
-          
-          <div class="panel panel-default">
-            <div class="panel-heading">Notes</div>
-            <div class="panel-body">
-              <div class="well well-sm">
-                <ul>
-                  <li>Facebook API:
-                    While trying to get access_token, I always got the following response, although the redirect_uri I used for /dialog/oauth and /oauth/access_token are the same "http://shengwei.li"
-                    <blockquote>
-                      {
-                        "error": {
-                          "message": "Error validating verification code. Please make sure your redirect_uri is identical to the one you used in the OAuth dialog request",
-                          "type": "OAuthException",
-                          "code": 100
-                        }
-                      }
-                      The key issue is that /dialog/oauth will append a dash ("/") to the url, while /oauth/access_token will not. Hence "http://shengwei.li/" does not match with "http://shengwei.li".
-                      Found this from the observation of redirected url from /dialog/oauth (which was http://shengwei.li/?code=...). Also found this thread later on stackoverflow:
-                      http://stackoverflow.com/questions/12996864/redirect-uri-error-in-oauth-for-facebook-django-app
-                      It is also mentioned a couple of times here: http://stackoverflow.com/questions/4386691/facebook-error-error-validating-verification-code (not the most voted answer -- as early as in 2011)
-                    </blockquote>
-                  </li>
-                  <li>Linked-In API:
-                    Instead of use state for /uas/oauth2/accessToken, it makes the life expectancy of code very short. Making the second call manually would probably leave the code expired and get the following very vague response:
-                    <blockquote>
-                      {"error":"invalid_request","error_description":"missing required parameters, includes an invalid parameter value, parameter more then once. : Unable to retrieve access token : appId or redirect uri does not match authorization code or authorization code expired"}
-                    </blockquote>
-                    BTW, the second request does not need to be POST, GET also works.
-                  </li>
+
+            <!-- >>>>>>>>>>>>> Movies <<<<<<<<<<<<< -->
+            <div id="movies" class="tab-pane fade">
+              <div class="panel panel-customized">
+                <div class="panel-heading">US Top Box</div>
+                <div class="panel-body">
+                  <div id="movie-list" class="pull-left">
+                    <table class="table-hover">
+                      <thead><tr></tr></thead>
+                      <tbody></tbody>
+                    </table>
+                    <div id="movie-summary"></div>
+                  </div>
+                  <div id="movie-detail" class="well well-sm pull-right">
+                    <div class="media">
+                      <a href="#" target="_blank">
+                        <img class="media-object img-rounded" alt="poster">
+                      </a>
+                    </div>
+                    <ul class="list-group"></ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- >>>>>>>>>>>>> Traveling <<<<<<<<<<<<< -->
+            <div id="traveling" class="tab-pane fade">
+              <div class="panel panel-customized">
+                <div class="panel-heading">Before I die, I want to ...</div>
+                <ul id="travel-list" class="list-group">
+                  <li class="list-group-item">Go camping in Arctic Circle <a href="http://e.weibo.com/2255154723/A5namDXId">[pics]</a></li>
+                  <li class="list-group-item"><a href="http://en.wikipedia.org/wiki/Banff_National_Park">Banff National Park (CA)</a></li>
                 </ul>
               </div>
             </div>
-          </div>
+
+          </div><!-- END OF TAB-CONTENT -->
 
         </div>
 
-      </div><!-- END OF TAB-CONTENT -->
+        <!-- ======================== My work ======================== -->
+        <div id="work">
 
+          <nav class="navbar navbar-default" role="navigation">
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+              <ul id="work-tabs" class="nav navbar-nav">
+                <li class="active"><a href="#career" data-toggle="tab">Career</a></li>
+                <li><a href="#projects" data-toggle="tab">Projects</a></li>
+                <li><a href="#about" data-toggle="tab">About</a></li>
+              </ul>
+            </div>
+          </nav>
+
+          <div class="tab-content">
+
+            <!-- >>>>>>>>>>>>> Career <<<<<<<<<<<<< -->
+            <div id="career" class="tab-pane fade in active">
+              <div id="linked-in" class="panel panel-default">
+                <div class="panel-heading">
+                  Linked-In Profile
+                  <small class="pull-right">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#linkedin-details" href="#p-summary">Summary</a> | 
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#linkedin-details" href="#p-skills">Skills</a> | 
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#linkedin-details" href="#p-recommendations">Recommendations</a>
+                  </small>
+                </div>
+                <div class="panel-body">
+                  <div class="media">
+                    <img class="media-object pull-left img-rounded" alt="potrait">
+                    <div class="media-body">
+                      <h3 id="full-name" class="vertical-compact"></h3>
+                      <h5 id="headline" class="vertical-compact"></h5>
+                      <p id="location-industry" class="vertical-compact grey-text"></p>
+                    </div>
+                  </div>
+                  <dl class="panel-collapse in dl-horizontal well">
+                    <dt id="positions" class="grey-text">Positions</dt>
+                    <dt id="education" class="grey-text">Education</dt>
+                    <dt id="recommendations" class="grey-text">Recommendations</dt>
+                    <dt id="connections" class="grey-text">Connections</dt>
+                    <dt id="profile-link" class="grey-text">Profile</dt>
+                  </dl>
+                  <div id="linkedin-details" class="panel-group">
+                    <div id="p-summary" class="panel-collapse collapse">
+                      <div class="panel panel-default">
+                        <div class="panel-body"><p class="lead">Summary</p></div>
+                      </div>
+                    </div>
+                    <div id="p-skills" class="panel-collapse collapse">
+                      <div class="panel panel-default">
+                        <div class="panel-body"><p class="lead">Skills</p></div>
+                      </div>
+                    </div>
+                    <div id="p-recommendations" class="panel-collapse collapse">
+                      <div class="panel panel-default">
+                        <div class="panel-body"><p class="lead">Recommendations</p></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- >>>>>>>>>>>>> Projects <<<<<<<<<<<<< -->
+            <div id="projects" class="tab-pane fade">
+              <div id="github" class="panel panel-default">
+                <div class="panel-heading">
+                  Yes, I'm on GitHub!
+                  <small class="pull-right"><a id="html_url" target="_blank"></a></small>
+                </div>
+                <div class="panel-body">
+                  <div id="info" class="pull-left">
+                    <h3 id="name" class="vertical-compact"></h3>
+                    <h4 id="id" class="vertical-compact grey-text"></h4>
+                    <hr />
+                    <dl class="dl-horizontal">
+                      <dt id="location-dt"><span class="glyphicon glyphicon-list"></span></dt><dd id="location-dd"></dd>
+                      <dt id="time-joind-dt"><span class="glyphicon glyphicon-list"></span></dt><dd id="time-joined-dd"><span class="grey-text">Joined on </span></dd>
+                    </dl>
+                    <hr />
+                    <div class="row">
+                      <div id="g-followers" class="col-md-3 center-text"><h3 class="vertical-compact"></h3><small class="grey-text">followers</small></div>
+                      <div id="g-following" class="col-md-3 center-text"><h3 class="vertical-compact"></h3><small class="grey-text">following</small></div>
+                      <div id="g-starred" class="col-md-3 center-text"><h3 class="vertical-compact"></h3><small class="grey-text">starred</small></div>
+                      <div id="g-watched" class="col-md-3 center-text"><h3 class="vertical-compact"></h3><small class="grey-text">watched</small></div>
+                    </div>
+                  </div>
+                  <div id="repos" class="pull-left">
+                    <div class="panel panel-default">
+                      <div class="panel-heading">Repositories</div>
+                      <ul class="list-group"></ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- >>>>>>>>>>>>> About <<<<<<<<<<<<< -->
+            <div id="about" class="tab-pane fade">
+              <div class="panel panel-default">
+                <div class="panel-heading">Credit</div>
+                <div class="panel-body">
+                  <div class="row">
+                    <a class="col-md-6" href="http://getbootstrap.com/">Bootstrap</a>
+                    <div class="col-md-6">
+                      <a href="http://jquery.com/">jQuery</a> / 
+                      <a href="http://d3js.org/">Data-Driven Documents (d3)</a>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <a class="col-md-6" href="http://open.weibo.com/">新浪微博 开发平台</a></li>
+                    <a class="col-md-6" href="http://developers.douban.com/">豆瓣 开发者</a></li>
+                  </div>
+                  <div class="row">
+                    <a class="col-md-6" href="https://developer.linkedin.com/">Linked-In Deverlopers</a></li>
+                    <a class="col-md-6" href="http://developer.github.com/">GitHub Developer</a></li>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="panel panel-default">
+                <div class="panel-heading">Notes</div>
+                <div class="panel-body">
+                  <div class="well well-sm">
+                    <ul>
+                      <li>Facebook API:
+                        While trying to get access_token, I always got the following response, although the redirect_uri I used for /dialog/oauth and /oauth/access_token are the same "http://shengwei.li"
+                        <blockquote>
+                          {
+                            "error": {
+                              "message": "Error validating verification code. Please make sure your redirect_uri is identical to the one you used in the OAuth dialog request",
+                              "type": "OAuthException",
+                              "code": 100
+                            }
+                          }
+                          The key issue is that /dialog/oauth will append a dash ("/") to the url, while /oauth/access_token will not. Hence "http://shengwei.li/" does not match with "http://shengwei.li".
+                          Found this from the observation of redirected url from /dialog/oauth (which was http://shengwei.li/?code=...). Also found this thread later on stackoverflow:
+                          http://stackoverflow.com/questions/12996864/redirect-uri-error-in-oauth-for-facebook-django-app
+                          It is also mentioned a couple of times here: http://stackoverflow.com/questions/4386691/facebook-error-error-validating-verification-code (not the most voted answer -- as early as in 2011)
+                        </blockquote>
+                      </li>
+                      <li>Linked-In API:
+                        Instead of use state for /uas/oauth2/accessToken, it makes the life expectancy of code very short. Making the second call manually would probably leave the code expired and get the following very vague response:
+                        <blockquote>
+                          {"error":"invalid_request","error_description":"missing required parameters, includes an invalid parameter value, parameter more then once. : Unable to retrieve access token : appId or redirect uri does not match authorization code or authorization code expired"}
+                        </blockquote>
+                        BTW, the second request does not need to be POST, GET also works.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div><!-- END OF TAB-CONTENT -->
+
+        </div>
+
+        <div id="divider"></div>
+      </div>
+      <div id="frame-right" class="frame-element frame-border-width"></div>
     </div>
-
-    <div id="divider"></div>
+    <div class="frame-border-height">
+      <div id="frame-bottom-left" class="frame-element frame-border-width"></div>
+      <div id="frame-bottom-dark" class="frame-element"></div>
+      <div id="frame-bottom-gradient" class="frame-element"></div>
+      <div id="frame-bottom-light" class="frame-element"></div>
+      <div id="frame-bottom-right" class="frame-element frame-border-width"></div>
+    </div>
   </div>
 
   <script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.2.2/d3.v3.min.js" charset="utf-8"></script>

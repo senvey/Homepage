@@ -1,6 +1,8 @@
 
 body {
   background-image: url('../images/bg-repeat-body.png');
+  padding: 20px;
+  overflow: hidden;
 }
 
 .vertical-compact {
@@ -8,7 +10,7 @@ body {
 }
 
 .grey-text {
-  color: grey;
+  color: gray;
 }
 
 .center-text {
@@ -51,18 +53,17 @@ body {
 /* ======================== General Classes ======================== */
 
 div#container {
-  border: 10px solid black;
-  width: 1020px;
-  height: 620px;
+  width: 1000px;
+  height: 600px;
   margin: auto;
-  margin-top: 3%;
+  float: left;
 }
 
 div#divider {
   background-image: url('../images/bg-repeat-life-bar.png');
   width: 40px;
   height: 600px;
-  border: 1px solid grey;
+  border: 1px solid gray;
   float: right;
   cursor: pointer;
 }

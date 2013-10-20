@@ -1,0 +1,82 @@
+.frame-element {
+	height: 100%;
+	float: left;
+}
+
+.frame-border-width {
+	width: 40px;
+}
+
+.frame-border-height {
+	height: 40px;
+}
+
+#frame {
+	height: 680px;
+	width: 1080px;
+	margin: auto;
+}
+
+#frame-top-left {
+	background-image: url('../images/frame/top-left.png');
+}
+
+#frame-top-dark {
+	background-image: url('../images/frame/top-dark.png');
+	width: 465px;
+}
+
+#frame-top-center {
+	background-image: url('../images/frame/top-center.png');
+	width: 70px;
+}
+
+#frame-top-light {
+	background-image: url('../images/frame/top-light.png');
+	width: 465px;
+}
+
+#frame-top-right {
+	background-image: url('../images/frame/top-right.png');
+	background-position: top right;
+}
+
+#frame-middle {
+	height: 600px;
+}
+
+#frame-left {
+	background-image: url('../images/frame/left.png');
+}
+
+#frame-right {
+	background-image: url('../images/frame/right.png');
+}
+
+#frame-bottom-left {
+	background-image: url('../images/frame/bottom-left.png');
+	background-position: bottom left;
+}
+
+#frame-bottom-dark {
+	background-image: url('../images/frame/bottom-dark.png');
+	background-position: bottom;
+	width: 650px;
+}
+
+#frame-bottom-gradient {
+	background-image: url('../images/frame/bottom-gradient.png');
+	background-position: bottom;
+	width: 30px;
+}
+
+#frame-bottom-light {
+	background-image: url('../images/frame/bottom-light.png');
+	background-position: bottom;
+	width: 320px;
+}
+
+#frame-bottom-right {
+	background-image: url('../images/frame/bottom-right.png');
+	background-position: bottom right;
+}
