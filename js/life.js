@@ -193,10 +193,7 @@ function load_movie_list() {
     if (movie.id in movie_cache) {
       populate_movie(movie_cache[movie.id]);
     } else {
-      $.ajax({
-        "url": movie_detail_url+movie.id,
-        "dataType": "jsonp"
-      }).done(function(movie) {
+      $.get("proxy.php?content=douban_movie_detail&movie_id=" + movie.id).done(function(data) {
         movie.title += " / " + movie.original_title;
         movie.image = movie.images.large;
         movie.rating = movie.rating.average;
@@ -209,10 +206,7 @@ function load_movie_list() {
     }
   }
 
-  $.ajax({
-    "url": movie_us_url,
-    "dataType": "jsonp"
-  }).done(function(data) {
+  $.get("proxy.php?content=douban_us_box").done(function(data) {
     var movies = [];
     data.subjects.forEach(function(item) {
       var movie = item.subject;

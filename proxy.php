@@ -27,6 +27,10 @@ $renren_token = '240086|6.6ec70dc2deb5058696be9ce7fd21a57f.2592000.1379379600-28
 $renren_profile_url = 'https://api.renren.com/v2/profile/get?userId=%s&access_token=%s';
 $renren_share_url = 'https://api.renren.com/v2/share/list?ownerId=%s&access_token=%s';
 
+$douban_url = "http://api.douban.com";
+$douban_us_box_url = $douban_url . "/v2/movie/us_box";
+$douban_movie_detail_url = $douban_url . "/v2/movie/subject/%s";
+
 // token with full_profile and network access
 $linkedin_token = 'AQXJsMV254lDeXNlmbbitcLtN-JRZbKK2g0fUp4qzJd53F6TVw21mckRTdHM-bMZVH5Lrutr7nnDbA6zDji1lHl70FK-GbjZy52xmCpK8ZiTL_kiQ0kD7Qx2pY0GR7-HUJd7d1OQa_KoWDoFmx_0ayzCcxbZryZHZxUuVKqasVdXQoz0ugA';
 $linkedin_profile_url = 'https://api.linkedin.com/v1/people/~';
@@ -48,6 +52,13 @@ switch ($content) {
     break;
   case 'renren_share':
     echo file_get_contents(sprintf($renren_share_url, $renren_uid, $renren_token));
+    break;
+  case 'douban_us_box':
+    echo file_get_contents($douban_us_box_url);
+    break;
+  case 'douban_movie_detail':
+    $movie_id = urldecode($_GET['movie_id']);
+    echo file_get_contents(sprintf($douban_movie_detail_url, $movie_id));
     break;
   case 'linkedin_profile':
     echo file_get_contents(sprintf($linkedin_profile_url, $linkedin_token));
