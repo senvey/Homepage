@@ -70,19 +70,35 @@ function load_renren() {
     $("#renren-visitors").append(profile.visitorCount);
   });
 
-  $.get("proxy.php?content=renren_share").done(function(data) {
-    var shares = data.response,
-        share_panel = $("div#renren .panel-body ul");
+  $.get("proxy.php?content=renren_feeds").done(function(data) {
+    var feeds = data.response,
+        feeds_panel = $("div#renren div#feeds ul");
 
-    shares.slice(0, 5).forEach(function(share) {
+    feeds.slice(0, 5).forEach(function(feed) {
+      var feed_content =  feed.resource.content;
+      if (feed.resource.url) {
+        feed_content += " " + feed.resource.url;
+      }
+      feed_content += " (" + feed.time + ")";
+
+      feeds_panel.append("<li class='list-group-item'>" + feed_content + "</li>")
+    });
+  });
+
+  $.get("proxy.php?content=renren_shares").done(function(data) {
+    var shares = data.response,
+        shares_panel = $("div#renren div#shares ul");
+
+    shares.slice(0, 3).forEach(function(share) {
       var share_content = "";
       if (share.thumbUrl) {
         var img = "<img class='media-object img-rounded' style='max-width: 150px;' src='" + share.thumbUrl + "'>";
         share_content += "<a class='pull-left' href='"+ share.url + "' target='_blank'>" + img + "</a>";
       }
-      var title = "<a href='" + share.url + "' target='_blank'>" + share.title + "</a>";
-      share_content += "<div class='media-body'>" + title + share.summary + "</div>";
-      share_panel.append("<li class='list-group-item'><div class='media'>" + share_content + "</div></li>")
+      var title = "<a href='" + share.url + "' target='_blank'>" + share.title + "</a> (" + share.shareTime + ")";
+      share_content += "<div class='media-body'>" + title + "<br/>" + share.summary + "</div>";
+
+      shares_panel.append("<li class='list-group-item'><div class='media'>" + share_content + "</div></li>")
     });
   });
 }

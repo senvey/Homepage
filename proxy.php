@@ -25,7 +25,8 @@ $weibo_posts_url = 'https://api.weibo.com/2/statuses/user_timeline.json?uid=%s&a
 $renren_uid = '282173283';
 $renren_token = '240086|6.f5f23def4e2801898e8fe6cc8304abfb.2592000.1384898400-282173283';
 $renren_profile_url = 'https://api.renren.com/v2/profile/get?userId=%s&access_token=%s';
-$renren_share_url = 'https://api.renren.com/v2/share/list?ownerId=%s&access_token=%s';
+$renren_feeds_url = 'https://api.renren.com/v2/feed/list?ownerId=%s&feedType=UPDATE_STATUS&access_token=%s';
+$renren_shares_url = 'https://api.renren.com/v2/share/list?ownerId=%s&access_token=%s';
 
 $douban_url = "http://api.douban.com";
 $douban_us_box_url = $douban_url . "/v2/movie/us_box";
@@ -50,8 +51,11 @@ switch ($content) {
   case 'renren_profile':
     echo file_get_contents(sprintf($renren_profile_url, $renren_uid, $renren_token));
     break;
-  case 'renren_share':
-    echo file_get_contents(sprintf($renren_share_url, $renren_uid, $renren_token));
+  case 'renren_feeds':
+    echo file_get_contents(sprintf($renren_feeds_url, $renren_uid, $renren_token));
+    break;
+  case 'renren_shares':
+    echo file_get_contents(sprintf($renren_shares_url, $renren_uid, $renren_token));
     break;
   case 'douban_us_box':
     echo file_get_contents($douban_us_box_url);
