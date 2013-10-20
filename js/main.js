@@ -4,8 +4,8 @@ $("#divider").click(function() {
   var life = d3.select("#life");
   var work = d3.select("#work");
   var divider = d3.select("#divider");
-  var fading = 500;
-  var dura = 3000;
+  var fading = 300;
+  var dura = 1800;
 
   if (life.style("width") == "0px") {  /* display life */
 
