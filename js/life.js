@@ -5,9 +5,9 @@ function load_weibo() {
     var profile = data;
     $("#weibo .panel-heading img").attr("src", profile.profile_image_url);
     $("#weibo .panel-heading a").attr("href", "http://www.weibo.com/"+profile.profile_url).html(profile.screen_name);
-    $("#weibo .panel-heading #followings_count").html(profile.friends_count+" followings");
-    $("#weibo .panel-heading #followers_count").html(profile.followers_count+" followers");
-    $("#weibo .panel-heading #posts_count").html(profile.statuses_count+" posts");
+    $("#weibo .panel-heading #followings_count").html(profile.friends_count+" 關注");
+    $("#weibo .panel-heading #followers_count").html(profile.followers_count+" 粉絲");
+    $("#weibo .panel-heading #posts_count").html(profile.statuses_count+" 微博");
   });
 
   /* posts */
@@ -33,7 +33,7 @@ function load_weibo() {
     posts.slice(0, delimit).forEach(function(post, i) {
       var pic_span = "";
       if (post.original_pic) {
-        pic_link = "<a href='" + post.original_pic + "' target='_blank'>[ View Image ]</a>";
+        pic_link = "<a href='" + post.original_pic + "' target='_blank'>[ 查看圖片 ]</a>";
         pic_span = " <span class='text-primary'>" + pic_link + "</span>"
       }
       posts_panel.append("<li id='post-" + i + "' class='list-group-item'>" + post.text + pic_span + "</li>");
@@ -47,15 +47,15 @@ function load_weibo() {
 
         panel_body = post_item.find("div.well");
         if (retwt.original_pic) {
-          pic_link = "<a href='" + retwt.original_pic + "' target='_blank'>[ View Image ]</a>";
+          pic_link = "<a href='" + retwt.original_pic + "' target='_blank'>[ 查看圖片 ]</a>";
           panel_body.append(" <span class='text-primary'>" + pic_link + "</span>");
         }
 
         // TODO: too urgly
-        cm_cnt = "<span class='label label-success label-space'>comments <span class='badge'>"+retwt.comments_count+"</span></span>";
-        rp_cnt = "<span class='label label-success label-space'>reposts <span class='badge'>"+retwt.reposts_count+"</span></span>";
-        lk_cnt = "<span class='label label-success label-space'>likes <span class='badge'>"+retwt.attitudes_count+"</span></span>";
-        panel_body.append("<br/><h5>"+cm_cnt+" "+rp_cnt+" "+lk_cnt+"</h5>");
+        lk_cnt = "<span class='label label-success label-space'>贊 <span class='badge'>"+retwt.attitudes_count+"</span></span>";
+        rp_cnt = "<span class='label label-success label-space'>轉發 <span class='badge'>"+retwt.reposts_count+"</span></span>";
+        cm_cnt = "<span class='label label-success label-space'>評論 <span class='badge'>"+retwt.comments_count+"</span></span>";
+        panel_body.append("<br/><h5>"+lk_cnt+" "+rp_cnt+" "+cm_cnt+"</h5>");
       }
     });
   });
@@ -192,7 +192,7 @@ function load_movie_list() {
       movie_detail.select(".media img").attr("src", movie.image);
       movie_detail.select(".media a").attr("href", movie.alt);
 
-      cols = ["title", "director", "casts"];
+      cols = ["影片名稱", "導演", "演員"];
       movie_detail.select("ul").selectAll("li")
         .data(cols).enter().append("li")
         .classed("list-group-item", true)
@@ -235,10 +235,10 @@ function load_movie_list() {
 
     var cols = ["rank", "title", "box", "rating"];
     var theader = {
-      "rank": {"name": "Rank", "width": "10%"},
-      "title": {"name": "Title", "width": "65%"},
-      "box": {"name": "Box", "width": "15%"},
-      "rating": {"name": "Rating", "width": "10%"}
+      "rank": {"name": "排名", "width": "10%"},
+      "title": {"name": "影片名稱", "width": "65%"},
+      "box": {"name": "票房收入", "width": "15%"},
+      "rating": {"name": "打分", "width": "10%"}
     };
 
     d3.select("div#movies thead").selectAll("th")
