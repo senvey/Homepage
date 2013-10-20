@@ -141,24 +141,21 @@ function load_book_list() {
       });
   }
 
-  $.ajax({
-    "url": book_collection_url,
-    "dataType": "jsonp"
-  }).done(function(data) {
-    var read_list = [];
-    var wish_list = [];
-    data.collections.forEach(function(collection) {
-      if (collection.status == "read") {
-        read_list.push(collection);
-      } else if (collection.status == "wish") {
-        wish_list.push(collection);
-      }
-    });
+  function load_list_by_status(status) {
+    // as of 10/19/2013, the API returns at most 20 items at a time
+    $.ajax({
+      "url": book_collection_url + "?status=" + status,
+      "dataType": "jsonp"
+    }).done(function(data) {
+      gen_book_list(d3.select("#" + status), data.collections);
 
-    gen_book_list(d3.select("#read"), read_list);
-    gen_book_list(d3.select("#wish"), wish_list);
-    gen_book_detail(read_list[0]);
-  });
+      if (status == "read")
+        gen_book_detail(data.collections[0]);
+    });
+  }
+
+  load_list_by_status("read");
+  load_list_by_status("wish");
 }
 
 
