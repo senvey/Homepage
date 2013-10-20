@@ -52,10 +52,10 @@ function load_weibo() {
         }
 
         // TODO: too urgly
-        cm_cnt = "<span class='label label-success label-space'>comments <span class='badge'>"+retwt.comments_count+"</span></span>";
-        rp_cnt = "<span class='label label-success label-space'>reposts <span class='badge'>"+retwt.reposts_count+"</span></span>";
         lk_cnt = "<span class='label label-success label-space'>likes <span class='badge'>"+retwt.attitudes_count+"</span></span>";
-        panel_body.append("<br/><h5>"+cm_cnt+" "+rp_cnt+" "+lk_cnt+"</h5>");
+        rp_cnt = "<span class='label label-success label-space'>reposts <span class='badge'>"+retwt.reposts_count+"</span></span>";
+        cm_cnt = "<span class='label label-success label-space'>comments <span class='badge'>"+retwt.comments_count+"</span></span>";
+        panel_body.append("<br/><h5>"+lk_cnt+" "+rp_cnt+" "+cm_cnt+"</h5>");
       }
     });
   });
