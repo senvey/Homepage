@@ -3,6 +3,9 @@
 <head>
   <title>Shengwei Li's Homepage</title>
 
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
   <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
   <!-- Optional theme -->
   <!-- <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css"> -->
@@ -32,10 +35,10 @@
           <nav class="navbar navbar-inverse" role="navigation">
             <div class="collapse navbar-collapse navbar-ex1-collapse">
               <ul id="life-tabs" class="nav navbar-nav">
-                <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
-                <li><a href="#books" data-toggle="tab">Books</a></li>
-                <li><a href="#movies" data-toggle="tab">Movies</a></li>
-                <li><a href="#traveling" data-toggle="tab">Traveling</a></li>
+                <li class="active"><a href="#home" data-toggle="tab">主頁</a></li>
+                <li><a href="#books" data-toggle="tab">書籍</a></li>
+                <li><a href="#movies" data-toggle="tab">電影</a></li>
+                <li><a href="#traveling" data-toggle="tab">旅行</a></li>
               </ul>
             </div>
           </nav>
@@ -52,7 +55,7 @@
                       <img class="media-object img-rounded" alt="avatar">
                     </div>
                     <div class="media-body">
-                      <h4 class="media-heading"><a href="#" target="_blank">Weibo</a></h4>
+                      <h4 class="media-heading"><a href="#" target="_blank">微博</a></h4>
                       <h5>
                         <span id="followings_count" class="label label-primary label-space"></span>
                         <span id="followers_count" class="label label-primary label-space"></span>
@@ -70,14 +73,14 @@
                   <div class="media">
                     <img class="media-object pull-left" src="images/renren.png" alt="Renren">
                     <div class="pull-right">
-                      <span id="renren-friends" class="label label-primary">Friends: </span><br />
-                      <span id="renren-visitors" class="label label-primary">Visitors: </span>
+                      <span id="renren-friends" class="label label-primary">朋友數: </span><br />
+                      <span id="renren-visitors" class="label label-primary">訪問量: </span>
                     </div>
                   </div>
                 </div>
-                <div class="panel-body lead">Feeds</div>
+                <div class="panel-body lead">說三道四</div>
                 <ul id="feeds" class="list-group"></ul>
-                <div class="panel-body lead">Shares</div>
+                <div class="panel-body lead">他們說。。。</div>
                 <ul id="shares" class="list-group"></ul>
               </div>
             </div>
@@ -100,11 +103,11 @@
               </div>
               <div id="book-list" class="pull-right">
                 <div class="panel panel-customized">
-                  <div class="panel-heading">Have Read</div>
+                  <div class="panel-heading">已讀過</div>
                   <ul id="read" class="list-group"></ul>
                 </div>
                 <div class="panel panel-customized">
-                  <div class="panel-heading">Wish to Read</div>
+                  <div class="panel-heading">想要讀</div>
                   <ul id="wish" class="list-group"></ul>
                 </div>
               </div>
@@ -113,7 +116,7 @@
             <!-- >>>>>>>>>>>>> Movies <<<<<<<<<<<<< -->
             <div id="movies" class="tab-pane fade">
               <div class="panel panel-customized">
-                <div class="panel-heading">US Top Box</div>
+                <div class="panel-heading">北美票行榜</div>
                 <div class="panel-body">
                   <div id="movie-list" class="pull-left">
                     <table class="table-hover">
@@ -139,8 +142,8 @@
               <div class="panel panel-customized">
                 <div class="panel-heading">Before I die, I want to ...</div>
                 <ul id="travel-list" class="list-group">
-                  <li class="list-group-item">Go camping in Arctic Circle <a href="http://e.weibo.com/2255154723/A5namDXId">[pics]</a></li>
-                  <li class="list-group-item"><a href="http://en.wikipedia.org/wiki/Banff_National_Park">Banff National Park (CA)</a></li>
+                  <li class="list-group-item">去北極圈內露營<a href="http://e.weibo.com/2255154723/A5namDXId">[pics]</a></li>
+                  <li class="list-group-item"><a href="http://en.wikipedia.org/wiki/Banff_National_Park">加拿大班夫（Banff）國家公園</a></li>
                 </ul>
               </div>
             </div>
@@ -155,9 +158,9 @@
           <nav class="navbar navbar-default" role="navigation">
             <div class="collapse navbar-collapse navbar-ex1-collapse">
               <ul id="work-tabs" class="nav navbar-nav">
-                <li class="active"><a href="#career" data-toggle="tab">Career</a></li>
-                <li><a href="#projects" data-toggle="tab">Projects</a></li>
-                <li><a href="#about" data-toggle="tab">About</a></li>
+                <li class="active"><a href="#career" data-toggle="tab">職業</a></li>
+                <li><a href="#projects" data-toggle="tab">項目</a></li>
+                <li><a href="#about" data-toggle="tab">其它</a></li>
               </ul>
             </div>
           </nav>
@@ -168,11 +171,11 @@
             <div id="career" class="tab-pane fade in active">
               <div id="linked-in" class="panel panel-default">
                 <div class="panel-heading">
-                  Linked-In Profile
+                  Linked-In 簡歷
                   <small class="pull-right">
-                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#linkedin-details" href="#p-summary">Summary</a> | 
-                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#linkedin-details" href="#p-skills">Skills</a> | 
-                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#linkedin-details" href="#p-recommendations">Recommendations</a>
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#linkedin-details" href="#p-summary">概述</a> | 
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#linkedin-details" href="#p-skills">技能</a> | 
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#linkedin-details" href="#p-recommendations">推薦</a>
                   </small>
                 </div>
                 <div class="panel-body">
@@ -185,26 +188,26 @@
                     </div>
                   </div>
                   <dl class="panel-collapse in dl-horizontal well">
-                    <dt id="positions" class="grey-text">Positions</dt>
-                    <dt id="education" class="grey-text">Education</dt>
-                    <dt id="recommendations" class="grey-text">Recommendations</dt>
-                    <dt id="connections" class="grey-text">Connections</dt>
-                    <dt id="profile-link" class="grey-text">Profile</dt>
+                    <dt id="positions" class="grey-text">地點</dt>
+                    <dt id="education" class="grey-text">教育</dt>
+                    <dt id="recommendations" class="grey-text">推薦</dt>
+                    <dt id="connections" class="grey-text">連接數</dt>
+                    <dt id="profile-link" class="grey-text">鏈接</dt>
                   </dl>
                   <div id="linkedin-details" class="panel-group">
                     <div id="p-summary" class="panel-collapse collapse">
                       <div class="panel panel-default">
-                        <div class="panel-body"><p class="lead">Summary</p></div>
+                        <div class="panel-body"><p class="lead">概述</p></div>
                       </div>
                     </div>
                     <div id="p-skills" class="panel-collapse collapse">
                       <div class="panel panel-default">
-                        <div class="panel-body"><p class="lead">Skills</p></div>
+                        <div class="panel-body"><p class="lead">技能</p></div>
                       </div>
                     </div>
                     <div id="p-recommendations" class="panel-collapse collapse">
                       <div class="panel panel-default">
-                        <div class="panel-body"><p class="lead">Recommendations</p></div>
+                        <div class="panel-body"><p class="lead">推薦</p></div>
                       </div>
                     </div>
                   </div>
@@ -216,7 +219,7 @@
             <div id="projects" class="tab-pane fade">
               <div id="github" class="panel panel-default">
                 <div class="panel-heading">
-                  Yes, I'm on GitHub!
+                  我的 GitHub
                   <small class="pull-right"><a id="html_url" target="_blank"></a></small>
                 </div>
                 <div class="panel-body">
@@ -238,7 +241,7 @@
                   </div>
                   <div id="repos" class="pull-left">
                     <div class="panel panel-default">
-                      <div class="panel-heading">Repositories</div>
+                      <div class="panel-heading">代碼庫</div>
                       <ul class="list-group"></ul>
                     </div>
                   </div>
@@ -249,7 +252,7 @@
             <!-- >>>>>>>>>>>>> About <<<<<<<<<<<<< -->
             <div id="about" class="tab-pane fade">
               <div class="panel panel-default">
-                <div class="panel-heading">Links</div>
+                <div class="panel-heading">更多鏈接</div>
                 <div class="panel-body">
                   <div class="row">
                     <a class="col-md-6" href="http://blog.shengwei.li/" target="_blank">我的博客</a></li>
@@ -259,7 +262,7 @@
               </div>
 
               <div class="panel panel-default">
-                <div class="panel-heading">Acknowledgement</div>
+                <div class="panel-heading">感謝</div>
                 <div class="panel-body">
                   <div class="row">
                     <a class="col-md-6" href="http://getbootstrap.com/" target="_blank">Bootstrap</a>
@@ -280,7 +283,7 @@
               </div>
               
               <div class="panel panel-default">
-                <div class="panel-heading">Notes</div>
+                <div class="panel-heading">建站筆記</div>
                 <div class="panel-body">
                   <div class="well well-sm">
                     <ul>
