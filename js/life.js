@@ -192,7 +192,8 @@ function load_movie_list() {
       movie_detail.select(".media img").attr("src", movie.image);
       movie_detail.select(".media a").attr("href", movie.alt);
 
-      cols = ["影片名稱", "導演", "演員"];
+      cols = ["title", "director", "casts"];
+      col_disp = ["影片名稱", "導演", "演員"];
       movie_detail.select("ul").selectAll("li")
         .data(cols).enter().append("li")
         .classed("list-group-item", true)
@@ -201,7 +202,7 @@ function load_movie_list() {
         .data(d3.permute(movie, cols))
         .text(function(d, i) {
           col = cols[i];
-          return col.toUpperCase()[0]+col.slice(1)+": "+d;
+          return col_disp[i] + ": " + d;
         });
       d3.select("div#movies div#movie-summary").text(movie.summary);
     }
