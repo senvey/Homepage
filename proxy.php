@@ -23,7 +23,7 @@ $weibo_profile_url = 'https://api.weibo.com/2/users/show.json?uid=%s&access_toke
 $weibo_posts_url = 'https://api.weibo.com/2/statuses/user_timeline.json?uid=%s&access_token=%s';
 
 $renren_uid = '282173283';
-$renren_token = '240086|6.6ec70dc2deb5058696be9ce7fd21a57f.2592000.1379379600-282173283';
+$renren_token = '240086|6.f5f23def4e2801898e8fe6cc8304abfb.2592000.1384898400-282173283';
 $renren_profile_url = 'https://api.renren.com/v2/profile/get?userId=%s&access_token=%s';
 $renren_share_url = 'https://api.renren.com/v2/share/list?ownerId=%s&access_token=%s';
 
