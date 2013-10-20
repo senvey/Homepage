@@ -193,7 +193,7 @@ function load_movie_list() {
     if (movie.id in movie_cache) {
       populate_movie(movie_cache[movie.id]);
     } else {
-      $.get("proxy.php?content=douban_movie_detail&movie_id=" + movie.id).done(function(data) {
+      $.get("proxy.php?content=douban_movie_detail&movie_id=" + movie.id).done(function(movie) {
         movie.title += " / " + movie.original_title;
         movie.image = movie.images.large;
         movie.rating = movie.rating.average;
