@@ -1,6 +1,7 @@
 
 // TODO: change the transition direction of work panel
-$("#divider").click(function() {
+var transform = function(event) {
+  event.preventDefault();
   var life = d3.select("#life");
   var work = d3.select("#work");
   var divider = d3.select("#divider");
@@ -36,7 +37,11 @@ $("#divider").click(function() {
       $("#work").children().fadeIn(fading);
     });
   }
-});
+}
+
+$("#divider").click(transform);
+$("#trans-work").click(transform);
+$("#trans-life").click(transform);
 
 function init() {
   $("div#work").children().css("display", "none");
