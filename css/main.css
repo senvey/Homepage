@@ -1,69 +1,87 @@
-
-body {
-  background-image: url('../images/bg-repeat-body.png');
-  padding: 20px;
-  overflow: hidden;
+.background {
+  background-image: url(../images/background.png);
+  background-size: 100%;
+  
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  display: block;
+  opacity: 0.7;
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
 }
 
-.vertical-compact {
-  margin-top: 0px;
-}
-
-.grey-text {
-  color: gray;
-}
-
-.center-text {
-  text-align: center;
-}
-
-/* ======================= [General Classes] ======================= */
-
-.tab-content {
-  height: 528px;  /* nav bar: height - 52px, margin-bottom - 20px */
+.content {
+  position: relative;
+  z-index: 100;
+  width: 920px;
   padding-left: 20px;
   padding-right: 20px;
-  overflow: auto;
-  font-size: 13px;
+  padding-top: 130px;
+  padding-bottom: 100px;
 }
 
-.panel-heading {
-  font-weight: bold;
-  text-shadow: 1px 1px #666;
-  font-size: 18px;
+.translucent-bg {
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
-.panel-heading .label {
-  font-size: 11px;
+#footer {
+  height: 0px;
+  display: none;  /* hide on home */
+  position: relative;
+  z-index: 101;
+  bottom: 30px;
 }
 
-.panel-customized .panel-heading {
-  color: #992725;
-  background-color: #A0C196;
+.navbar-short {
+  width: 920px;
 }
 
-.panel-customized .panel-body {
-  background-color: #C2C2C2;
+a, a:hover {
+  color: #7A4121;
 }
 
-.panel-customized .list-group-item {
-  background-color: #C2C2C2;
+p {
+  line-height: 1.4;
+  font-size: initial;
+  text-align: justify;
 }
 
-/* ======================== General Classes ======================== */
-
-div#container {
-  width: 1000px;
-  height: 600px;
-  margin: auto;
-  float: left;
+#portrait {
+  margin-top: 50px;
 }
 
-div#divider {
-  background-image: url('../images/bg-repeat-life-bar.png');
-  width: 40px;
-  height: 600px;
-  border: 1px solid gray;
-  float: right;
-  cursor: pointer;
+#narrator #bio-desc {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: 300;
+  text-align: justify;
 }
+
+.site-icon {
+  height: 100px;
+  width: 100px;
+  padding: 5px;
+}
+
+#projects .proj-lang {
+  font-size: smaller;
+}
+
+#projects small {
+  color: #555;
+}
+
+.sns-icon {
+  margin: 5px;
+}
+
+
+
+
