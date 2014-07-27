@@ -40,7 +40,7 @@
           </div>
           
           <div class="col-md-7">
-            <div class="page-header text-right"><h1>Heya<small>, welcome to my homepage.</small></h1></div>
+            <div class="page-header text-right"><h1>Heya, <small>welcome to my homepage.</small></h1></div>
             <p id="bio-desc">I'm a software engineer working in the <a href="http://en.wikipedia.org/wiki/San_Francisco_Bay_Area" target="_blank">San Francisco bay area</a>, generally passionate about data mining and analysis. I like to learn new stuff and build things. Doing <a href="https://github.com/senvey?tab=repositories">projects</a> keeps me sharp and it's a lot of fun. Sometimes I enjoy reading and collecting cool stuff online. Hopefully you may also find something interesting in my collections. I keep a knowledge wiki and occasionally scrawl some notes on my blog too.</p>
             
             <div id="site-links" class="row">
@@ -366,7 +366,7 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
-  <script language="javascript">
+  <script>
     $('a').on('shown.bs.tab', function() {
       if ($('#home.in').length == 0) {
         // not on home tab -- show content background and display footer
@@ -377,7 +377,18 @@
         $('div.content').removeClass('translucent-bg');
         $('#footer').hide();
       }
-    })
+    });
+  </script>
+  
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-28031626-1', 'auto');
+    ga('send', 'pageview');
   </script>
 </body>
 </html>
